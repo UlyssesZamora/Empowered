@@ -1,0 +1,16 @@
+#title {
+    position: absolute;
+    margin-left: 200px;
+    margin-top:175px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #1D3628;
+
+}

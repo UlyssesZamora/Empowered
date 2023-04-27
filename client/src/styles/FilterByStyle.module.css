@@ -1,0 +1,121 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .modal {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: -80px;
+    width: 595px;
+    height: 711px;
+    
+    
+  }
+
+  .modalContainer{
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 174, 255, 0.254); */
+  }
+  .modalHeadingContainer{
+    margin-top: -3%;
+    padding-top: 10px;
+    width: 106%;
+    margin-left: -3%;
+    height: 55px;
+    /* background-color: rgba(0, 174, 255, 0.254); */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* identical to box height, or 26px */
+    letter-spacing: 0.1em;
+
+    color: #000000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .modalHeading{
+    margin-left: 26px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* identical to box height, or 26px */
+    letter-spacing: 0.1em;
+  }
+
+  .modalFilterContainer{
+    width: 100%;
+    height: 219px;
+    /* background-color: rgba(0, 0, 255, 0.257); */
+    overflow: hidden;
+  }
+
+  .modalLeft {
+    /* display: flex;   */
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    /* background-color: rgba(137, 43, 226, 0.194); */
+    display: inline-block;
+    vertical-align:top;
+  }
+  .modalLeftTop {
+    /* display: flex;   */
+    width: 100%;
+    height: 45%;
+    border-top-left-radius: 10px;
+    /* background-color: rgba(43, 226, 208, 0.397); */
+    text-align: center;
+    vertical-align:top;
+  }
+  .modalLeftBottom {
+    display: flex;  
+    width: 100%;
+    height: 55%;
+    border-bottom-left-radius: 10px;
+    /* background-color: rgba(153, 226, 43, 0.353); */
+    /* vertical-align:top; */
+    display: inline-block;
+  }
+  .modalSmallContainer {
+    width: 100%;
+    margin-bottom: 3%;
+    /* background-color:#cda4a4; */
+    display: inline-block;
+  }
+  .modalRight {
+    /* display: flex;   */
+    width: 50%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    /* background-color: rgba(217, 43, 226, 0.145); */
+    display: inline-block;
+  }
+  
+  .closeButton {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 135px;
+    left: 1276px;
+    /* background-color: blueviolet; */
+  }
+  
+  .content {
+    margin-top: 16px;
+  }

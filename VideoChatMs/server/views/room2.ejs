@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      
+    /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous"> -->
+    <link rel="stylesheet"  href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.3.1/peerjs.min.js.map"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+    </script>
+    <script src="https://kit.fontawesome.com/76ac3b2cc6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+        <img id=empImg src="/images/empowerd.png">
+	</header>
+    <div id = "center">
+        <div id="video-grid">
+            <div id="video-grid2"></div>
+        </div>
+        <div id="controls">
+            <div
+                class="main__controls_button"
+                id="muteButton"
+                onclick="muteUnmute()"
+                >
+                <i class="fa fa-microphone"></i>
+                <span></span>
+                </div>
+                <br>
+                <div
+                class="main__controls_button"
+                id="playPauseVideo"
+                onclick="playStop()"
+                >
+                <i class="fa fa-video-camera"></i>
+                <span></span>
+                
+                </div>
+                <!-- <div class="main__controls_button"> -->
+                <form action="/redirect" method="POST">
+                    <!-- <button type="button" class="btn btn-danger">Disconnect</button> -->
+                    <button class="btn btn-danger">Disconnect</button>
+                </form>
+                <!-- </div> -->
+        </div>
+      
+      
+    </div>
+	<footer>
+		<p id="footerText">Empowerd by digital ocean</p>
+	</footer>
+    <script src="script2.js"></script>
+</body>
+</html>
