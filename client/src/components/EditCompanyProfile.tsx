@@ -63,7 +63,7 @@ const EditCompanyProfile = ({
   //DeleteProfileLogoChange
   const DeleteProfileLogoChange = () => {
     axios
-      .put("/api/updateLogo", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
         companyImage: "../src/assets/companyLogo.png",
       })
@@ -93,7 +93,7 @@ const EditCompanyProfile = ({
   //update department
   const handleDepartmantUpdate = () => {
     axios
-      .post("/editDepartment", {
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/editDepartment", {
         companyId: companyId,
         userValues: JSON.stringify(departmentList),
       })
@@ -138,7 +138,7 @@ const EditCompanyProfile = ({
   const updateNewInfo = () => {
     console.log(newcompanyLocation, newcompanyName, companyId);
     axios
-      .put("/updateCompanyInfo", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyInfo", {
         companyId: companyId,
         companyName: newcompanyName,
         companyLocation: newcompanyLocation,
@@ -155,7 +155,7 @@ const EditCompanyProfile = ({
   //  update New CompanyMission to DB
   const updateNewCompanyMission = () => {
     axios
-      .put("/updateCompanyMission", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyMission", {
         companyId: companyId,
         companyMission: updateCompanyMission.current.value,
       })
@@ -170,7 +170,7 @@ const EditCompanyProfile = ({
 
   // const editDepartment = () => {
   //   axios
-  //   .post("/editDepartment", {companyId:companyId, userValues: JSON.stringify(departmentList)})
+  //   .post("https://goldfish-app-wb78d.ondigitalocean.app/editDepartment", {companyId:companyId, userValues: JSON.stringify(departmentList)})
   //   .then((res:any) => {
   //       console.log(res)
   //       window.location.reload()
