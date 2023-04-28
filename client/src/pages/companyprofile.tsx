@@ -21,6 +21,7 @@ const CompanyProfile = () => {
   const [departmentReview, setDepartmentReview] = useState<any[]>([]);
   const [Department, setDepartment] = useState<any[]>([]);
   const [allDepartment, setAllDepartment] = useState<any[]>([]);
+  const [companydepartmentId, setcompanydepartmentId] = useState("");
   const { id } = useParams();
 
   if (localStorage.getItem("jwt") === null) {
@@ -36,7 +37,7 @@ const CompanyProfile = () => {
   // getting data from api and setting to profile
   const getData = async (id: any) => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/companyId/${id}`)
+      .get(`/companyId/${id}`)
       .then((res: any) => {
         setCompanyData(res.data[0]);
       })
@@ -48,7 +49,7 @@ const CompanyProfile = () => {
   // getting all pros
   const getAllPros = async () => {
     axios
-      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllPros")
+      .get("/getAllPros")
       .then((res: any) => {
         setAllPros(res.data);
       })
@@ -60,7 +61,7 @@ const CompanyProfile = () => {
   //getting Pros for loged in company
   const getPros = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getPros/${id}`)
+      .get(`/getPros/${id}`)
       .then((res: any) => {
         setPros(res.data);
       })
@@ -72,7 +73,7 @@ const CompanyProfile = () => {
   //getting Cons for loged in company
   const getCons = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getCons/${id}`)
+      .get(`/getCons/${id}`)
       .then((res: any) => {
         setCons(res.data);
       })
@@ -84,7 +85,7 @@ const CompanyProfile = () => {
   //getting Cons for logged in company
   const getCompanyReviews = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getCompanyReviews/${id}`)
+      .get(`/getCompanyReviews/${id}`)
       .then((res: any) => {
         setCompanyReview(res.data);
       })
@@ -96,7 +97,7 @@ const CompanyProfile = () => {
   //getting Department Review for logged in company
   const getDepartmentReviews = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getDepartmentReviews/${id}`)
+      .get(`/getDepartmentReviews/${id}`)
       .then((res: any) => {
         setDepartmentReview(res.data);
       })
@@ -108,7 +109,7 @@ const CompanyProfile = () => {
   //getting Department for logged in company
   const getDepartment = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getDepartment/${id}`)
+      .get(`/getDepartment/${id}`)
       .then((res: any) => {
         setDepartment(res.data);
       })
@@ -119,7 +120,7 @@ const CompanyProfile = () => {
 
   const getAllDepartment = async () => {
     axios
-      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllDepartment")
+      .get("/getAllDepartment")
       .then((res: any) => {
         setAllDepartment(res.data);
       })
@@ -152,7 +153,7 @@ const CompanyProfile = () => {
   return (
     <div className={UserProfileStyle.pageBackground}>
       <nav className={UserProfileStyle.nav}>
-        <img className={UserProfileStyle.logo} src="/images/image3.png" />
+        <img className={UserProfileStyle.logo} src="../src/assets/image3.png" />
 
         {/* search box */}
         <input
@@ -161,12 +162,12 @@ const CompanyProfile = () => {
           className={UserProfileStyle.search}
         />
         <button className={UserProfileStyle.button}>
-          <img src="/images/search.png" />
+          <img src="../src/assets/search.png" />
         </button>
 
         <img
           className={UserProfileStyle.logoAvatar}
-          src="/images/companyLogo.png"
+          src="../src/assets/companyLogo.png"
         />
       </nav>
       {modalOpen && (
@@ -185,6 +186,7 @@ const CompanyProfile = () => {
           companyMission={companyData.companyMission}
           companyDepartment={Department}
           allDepartment={allDepartment}
+          companyReview={departmentReview}
         />
       )}
 
@@ -206,7 +208,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="/images/edit.png"
+                      src="../src/assets/edit.png"
                     />
                   </a>
                 </>
@@ -270,7 +272,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="/images/edit.png"
+                      src="../src/assets/edit.png"
                     />
                   </a>
                 </>
@@ -366,22 +368,33 @@ const CompanyProfile = () => {
             {/* Departments */}
             <div className={UserProfileStyle.rightCard}>
               {/* adding or deleting the department */}
-              {owner && (
-                <>
-                  <a
-                    href="#"
-                    onClick={() => {
-                      setOpenModal(true);
-                      setcompanyInfoEdit("editDepartment");
-                    }}
-                  >
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="/images/edit.png"
-                    />
-                  </a>
-                </>
-              )}
+              <a
+                href="#"
+                onClick={() => {
+                  setOpenModal(true);
+                  setcompanyInfoEdit("addDepartment");
+                }}
+              >
+                <img
+                  className={UserProfileStyle.addIcon}
+                  src="../src/assets/add.png"
+                />
+                <span className={UserProfileStyle.addText}>add</span>
+              </a>
+
+              <a
+                href="#"
+                onClick={() => {
+                  setOpenModal(true);
+                  setcompanyInfoEdit("deleteDepartment");
+                }}
+              >
+                <img
+                  className={UserProfileStyle.trashIcon}
+                  src="../src/assets/trash.png"
+                />
+                <span className={UserProfileStyle.deleteText}>delete</span>
+              </a>
 
               {/* displaying depatment in the company */}
               <p className={UserProfileStyle.rightCardHeading}>Departments</p>
