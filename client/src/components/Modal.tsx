@@ -42,7 +42,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <div className={styles.modalLeftTop}>
         
           <img className={CoffeeChatStyle.connectionCardAvatar}
-                    src="./src/assets/avatar.png"
+                    src="/images/avatar.png"
           />
            <div>
             <p className={CoffeeChatStyle.connectionCardNameModal}>
@@ -88,7 +88,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/leftArrow.png" />
+               <img src="images/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -122,7 +122,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/rightArrow.png" />
+               <img src="images/rightArrow.png" />
                </button>
                 </div>
 
