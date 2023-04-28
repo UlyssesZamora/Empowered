@@ -38,7 +38,7 @@ const LoginPage = () => {
         });
     } else {
       axios
-        .post("/api/companylogin", { user: userName, password })
+        .post("https://goldfish-app-wb78d.ondigitalocean.app/api/companylogin", { user: userName, password })
         .then((res: any) => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
