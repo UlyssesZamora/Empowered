@@ -215,7 +215,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
@@ -295,7 +295,7 @@ const UserProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </a>
                 </>
@@ -318,7 +318,7 @@ const UserProfile = () => {
                     >
                       <img
                         className={UserProfileStyle.editIcon}
-                        src="../src/assets/edit.png"
+                        src="images/edit.png"
                       />
                     </a>
                   </>
@@ -365,7 +365,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
@@ -620,7 +620,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
@@ -735,7 +735,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
@@ -773,7 +773,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
@@ -800,7 +800,7 @@ const UserProfile = () => {
                     >
                       <img
                         className={UserProfileStyle.editIcon}
-                        src="../src/assets/edit.png"
+                        src="images/edit.png"
                       />
                     </a>
                   </>
@@ -837,7 +837,7 @@ const UserProfile = () => {
                     >
                       <img
                         className={UserProfileStyle.editIcon}
-                        src="../src/assets/edit.png"
+                        src="images/edit.png"
                       />
                     </a>
                   </>
@@ -867,7 +867,7 @@ const UserProfile = () => {
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </>
                 )}
