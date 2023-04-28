@@ -118,7 +118,7 @@ io.on("connection", (socket) => {
 });
 
 app.post('/redirect', function(req, res) {
-  var url = "http://localhost:5173/coffeechat";
+  var url = "https://empowrd-2idk5.ondigitalocean.app/coffeechat";
   // console.log(url);
   res.redirect(301, url);
 });

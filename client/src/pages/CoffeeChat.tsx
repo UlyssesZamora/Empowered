@@ -56,7 +56,7 @@ const calendlyConfig = {
 };
 
   const redirectToVideoChat = () => {
-    window.location.href = "http://localhost:3030/";
+    window.location.href = "https://monkfish-app-envaa.ondigitalocean.app/";
   }
 
 
