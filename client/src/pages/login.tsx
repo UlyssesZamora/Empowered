@@ -22,7 +22,7 @@ const LoginPage = () => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
             axios
-              .get("/profileData", {
+              .get("https://goldfish-app-wb78d.ondigitalocean.app/profileData", {
                 headers: {
                   authorization: "Bearer: " + localStorage.getItem("jwt"),
                 },
