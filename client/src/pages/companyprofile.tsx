@@ -152,7 +152,7 @@ const CompanyProfile = () => {
   return (
     <div className={UserProfileStyle.pageBackground}>
       <nav className={UserProfileStyle.nav}>
-        <img className={UserProfileStyle.logo} src="../src/assets/image3.png" />
+        <img className={UserProfileStyle.logo} src="/images/image3.png" />
 
         {/* search box */}
         <input
@@ -161,12 +161,12 @@ const CompanyProfile = () => {
           className={UserProfileStyle.search}
         />
         <button className={UserProfileStyle.button}>
-          <img src="images/search.png" />
+          <img src="/images/search.png" />
         </button>
 
         <img
           className={UserProfileStyle.logoAvatar}
-          src="images/companyLogo.png"
+          src="/images/companyLogo.png"
         />
       </nav>
       {modalOpen && (
