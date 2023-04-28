@@ -161,12 +161,12 @@ const CompanyProfile = () => {
           className={UserProfileStyle.search}
         />
         <button className={UserProfileStyle.button}>
-          <img src="../src/assets/search.png" />
+          <img src="images/search.png" />
         </button>
 
         <img
           className={UserProfileStyle.logoAvatar}
-          src="../src/assets/companyLogo.png"
+          src="images/companyLogo.png"
         />
       </nav>
       {modalOpen && (
@@ -206,7 +206,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </a>
                 </>
@@ -270,7 +270,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </a>
                 </>
@@ -377,7 +377,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="images/edit.png"
                     />
                   </a>
                 </>
