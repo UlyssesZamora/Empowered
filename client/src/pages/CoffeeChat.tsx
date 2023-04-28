@@ -69,7 +69,7 @@ const CoffeeChat = () => {
 
   const getAllInterests = async () => {
     axios
-      .get("/getAllInterests")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllInterests")
       .then((res: any) => {
         setInterestList(res.data);
       })
