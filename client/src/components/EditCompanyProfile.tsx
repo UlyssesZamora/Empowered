@@ -14,6 +14,7 @@ const EditCompanyProfile = ({
   companyMission,
   companyDepartment,
   allDepartment,
+  companyReview,
 }: {
   closeModal: (arg: boolean) => void;
   companyLogo: string;
@@ -24,11 +25,11 @@ const EditCompanyProfile = ({
   companyMission: string;
   companyDepartment: any;
   allDepartment: any;
+  companyReview: any;
 }) => {
   const [newcompanyName, setcompanyName] = useState(companyName);
   const [newcompanyLocation, setcompanyLocation] = useState(companyLocation);
   const updateCompanyMission = useRef<any>([]);
-  const [department, setDepartment] = useState("");
   const [newDepartment, setNewDepartment] = useState("");
   const [departmentList, setDepartmentList] = useState(companyDepartment);
 
@@ -43,7 +44,7 @@ const EditCompanyProfile = ({
       reader.onload = () => {
         const imageDataUrl = reader.result;
         axios
-          .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
+          .put("/api/updateLogo", {
             companyId: companyId,
             companyImage: imageDataUrl,
           })
@@ -86,57 +87,16 @@ const EditCompanyProfile = ({
     setcompanyLocation(value);
   };
 
-  const onchangeDepartment = (e: any) => {
-    setDepartmentList(e.target.value);
-  };
-
-  //update department
-  const handleDepartmantUpdate = () => {
-    axios
-      .post("https://goldfish-app-wb78d.ondigitalocean.app/editDepartment", {
-        companyId: companyId,
-        userValues: JSON.stringify(departmentList),
-      })
-      .then((res: any) => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const onChangeValue = (e: any) => {
     setNewDepartment(e.target.value);
   };
 
-  const handleAddDepartment = () => {
-    const selectedDepartment = allDepartment.find(
-      (dept: any) =>
-        dept.departmentName.toLowerCase() === newDepartment.toLowerCase()
-    );
-
-    if (selectedDepartment) {
-      const newdept = {
-        id: selectedDepartment.id,
-        departmentName: selectedDepartment.departmentName,
-      };
-      setDepartmentList((prevValues: any) => {
-        return [...prevValues, newdept];
-      });
-
-      setNewDepartment("");
-    }
-  };
-
   const onSearch = (searchTerm: string) => {
-    console.log(searchTerm);
-    setDepartment(searchTerm);
+    setNewDepartment(searchTerm);
   };
 
   //  update New Info of company to DB
   const updateNewInfo = () => {
-    console.log(newcompanyLocation, newcompanyName, companyId);
     axios
       .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyInfo", {
         companyId: companyId,
@@ -168,17 +128,116 @@ const EditCompanyProfile = ({
       });
   };
 
-  // const editDepartment = () => {
-  //   axios
-  //   .post("https://goldfish-app-wb78d.ondigitalocean.app/editDepartment", {companyId:companyId, userValues: JSON.stringify(departmentList)})
-  //   .then((res:any) => {
-  //       console.log(res)
-  //       window.location.reload()
-  //   })
-  //   .catch((error) => {
-  //       console.log(error)
-  //   })
-  // };
+  //adding depatment on clicking tag
+  const handleAddDepartment = (
+    departmentId: number,
+    departmentName: string
+  ) => {
+    console.log("add to database selectedDepartment");
+    const newdept = {
+      id: departmentId,
+      departmentName: departmentName,
+    };
+    setDepartmentList((prevValues: any) => {
+      return [...prevValues, newdept];
+    });
+
+    setNewDepartment("");
+  };
+
+  const handleDelete = (departmentId: number) => {
+    setDepartmentList((prevValue: any) => {
+      const updatedValues = prevValue.filter(
+        (value: any) => value.id !== departmentId
+      );
+      return updatedValues;
+    });
+  };
+
+  //deleting review depatment
+  const handleDeleteDepartment = () => {
+    let newIDList: any = [];
+    let oldIDList: any = [];
+
+    for (let i = 0; i < departmentList.length; i++) {
+      newIDList.push(departmentList[i].id);
+    }
+    for (let i = 0; i < companyDepartment.length; i++) {
+      oldIDList.push(companyDepartment[i].id);
+    }
+    let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
+
+    companyReview.map((review: any) => {
+      console.log(review);
+      deleteID.map((deptID: any) => {
+        if (review.companydepartmentId === deptID) {
+          console.log(deptID);
+          axios
+            .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`)
+            .then((res: any) => {
+              console.log(res);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      });
+    });
+    deleteTable(deleteID);
+  };
+
+  //deleting department
+  const deleteTable = (deleteDepartmentID: any) => {
+    deleteDepartmentID.map((deptID: any) => {
+      // console.log(deptID);
+      axios
+        .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`)
+        .then((res: any) => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
+
+  // handling changes in search and add in in modal
+  const handleDepartmentChanges = (departmentId: number) => {
+    const selectedDepartment = allDepartment.find(
+      (department: any) =>
+        department.departmentName.toLowerCase() === newDepartment.toLowerCase()
+    );
+
+    if (selectedDepartment) {
+      const newDept = {
+        departmentId: departmentId,
+        companyId: companyId,
+        departmentName: selectedDepartment.departmentName,
+      };
+      setDepartmentList((prevInterests: any) => {
+        return [...prevInterests, newDept];
+      });
+
+      setNewDepartment("");
+    }
+  };
+
+  //adding newdepartment  to DB
+  const handleAdd = () => {
+    axios
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
+        newDepartmentList: departmentList,
+        oldDepartmentList: companyDepartment,
+      })
+      .then((res: any) => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     // logo update modal
@@ -309,12 +368,12 @@ const EditCompanyProfile = ({
         </div>
       )}
 
-      {/* company depatment edit */}
-      {companyInfoEdit === "editDepartment" && (
+      {/* company depatment add */}
+      {companyInfoEdit === "addDepartment" && (
         <div className={a.modalBackground}>
           <div className={a.modalContainer}>
             <div className={a.titleCloseBtn}>
-              <div className={a.modualTitleText}>Edit Department</div>
+              <div className={a.modualTitleText}>Add New Department</div>
               <button
                 onClick={() => {
                   closeModal(false);
@@ -323,13 +382,12 @@ const EditCompanyProfile = ({
                 X
               </button>
             </div>
-            {/* displaying  department in Database */}
+
             <div className={a.tagContiner}>
               {departmentList.map((dept: any) => (
                 <div className={a.tag}>{dept.departmentName}</div>
               ))}
             </div>
-
             {/* search bar to add new departmentName*/}
             <input
               type="text"
@@ -337,8 +395,9 @@ const EditCompanyProfile = ({
               value={newDepartment}
               onChange={onChangeValue}
             />
-            <p className={a.modualTitleText}>Add up to 5 Values</p>
-
+            <p className={a.modualTitleText}>
+              Double click on tag to add, and update one at the time
+            </p>
             <div className={a.tagContiner}>
               {allDepartment
                 .filter((dept: any) => {
@@ -347,7 +406,7 @@ const EditCompanyProfile = ({
                   const isSelected = departmentList.some(
                     (deptart: any) => deptart.id === dept.id
                   );
-                  console.log(isSelected);
+
                   return (
                     searchTerm &&
                     departmentname.startsWith(searchTerm) &&
@@ -359,7 +418,9 @@ const EditCompanyProfile = ({
                     className={a.tag}
                     onClick={() => {
                       onSearch(dept.departmentName);
-                      handleAddDepartment();
+                      //adding depatment on clicking the tag
+                      // handleAddDepartment(dept.id, dept.departmentName);
+                      handleDepartmentChanges(dept.id);
                     }}
                   >
                     {dept.departmentName}
@@ -367,7 +428,47 @@ const EditCompanyProfile = ({
                 ))}
             </div>
 
-            <button className={a.saveChanges}>Update Changes</button>
+            <button className={a.saveChanges} onClick={handleAdd}>
+              Update Changes
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* company depatment delete */}
+      {companyInfoEdit === "deleteDepartment" && (
+        <div className={a.modalBackground}>
+          <div className={a.modalContainer}>
+            <div className={a.titleCloseBtn}>
+              <div className={a.modualTitleText}>Delete Department</div>
+              <button
+                onClick={() => {
+                  closeModal(false);
+                }}
+              >
+                X
+              </button>
+            </div>
+            {/* displaying  department in Database */}
+            <p className={a.modualTitleText}>
+              Click on tag to delete department, and update one at the time
+            </p>
+            <div className={a.tagContiner}>
+              {departmentList.map((dept: any) => (
+                <div
+                  className={a.tag}
+                  onClick={() => {
+                    handleDelete(dept.id);
+                  }}
+                >
+                  {dept.departmentName}
+                </div>
+              ))}
+            </div>
+
+            <button className={a.saveChanges} onClick={handleDeleteDepartment}>
+              Update Changes
+            </button>
           </div>
         </div>
       )}
