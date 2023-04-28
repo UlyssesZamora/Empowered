@@ -206,7 +206,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -270,7 +270,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -377,7 +377,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
