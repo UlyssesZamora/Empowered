@@ -77,6 +77,6 @@ app.get("/", async (req, res) => {
 
 
 //Server port listener
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`[Server]: Server is running at http://localhost:${port}`);
 });
