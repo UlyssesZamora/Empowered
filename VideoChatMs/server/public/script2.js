@@ -9,8 +9,8 @@ myVideo.muted = true;
 
 var peer = new Peer(undefined, {
   path: "/peerjs",
-  host: "https://monkfish-app-envaa.ondigitalocean.app/",
-  // port: "",
+  host: "/",
+  port: "3030",
 });
 
 let myVideoStream;
