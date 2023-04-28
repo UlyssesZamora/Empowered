@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePicChange from "../components/ProfilePicChange";
+import userIcon from "../assets/user-01-svgrepo-com.svg";
 import jwtDecode from "jwt-decode";
 // import NavBar from "../components/NavBar";
 
@@ -750,7 +751,7 @@ const UserProfile = () => {
                         <div className={UserProfileStyle.reviewCardTop}>
                           <img
                             className={UserProfileStyle.reviewCardAvatar}
-                            src={review.userProfilePicture}
+                            src={review.userProfilePicture ? review.userProfilePicture : userIcon}
                           />
                           <p className={UserProfileStyle.reviewCardName}>
                             {review.userFirstName + " " + review.userLastName}
