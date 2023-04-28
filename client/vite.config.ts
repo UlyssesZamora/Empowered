@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/test": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/erase": "https://goldfish-app-wb78d.ondigitalocean.app/",
-      "/api/login": "https://goldfish-app-wb78d.ondigitalocean.app/",
+      "/api/login": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/api/validation": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/profileData": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/api/userCreation": "https://goldfish-app-wb78d.ondigitalocean.app/",
