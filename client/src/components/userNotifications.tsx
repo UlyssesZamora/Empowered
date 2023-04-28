@@ -19,7 +19,7 @@ const UserNotifications = ({
 
     const getPendingFollowers = () => {
         axios
-        .get(`/getPendingFollowers/${lol.key}`)
+        .get(`https://goldfish-app-wb78d.ondigitalocean.app/getPendingFollowers/${lol.key}`)
         .then((res:any) => {
             setPendingFollowers(res.data)
         })
@@ -30,7 +30,7 @@ const UserNotifications = ({
 
     const onAcceptFollower = (followerId:any) => {
         axios
-        .put("/acceptFollowers", {followedId:lol.key, followerId:followerId})
+        .put("https://goldfish-app-wb78d.ondigitalocean.app/acceptFollowers", {followedId:lol.key, followerId:followerId})
         .then((res:any) => {
             console.log(res)
             window.location.reload()
