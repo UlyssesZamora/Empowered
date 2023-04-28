@@ -1,4 +1,4 @@
-const socket = io("/");
+const socket = io("https://monkfish-app-envaa.ondigitalocean.app/");
 const chatInputBox = document.getElementById("chat_message");
 const all_messages = document.getElementById("all_messages");
 const main__chat__window = document.getElementById("main__chat__window");
@@ -10,7 +10,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   // path: "/peerjs",
   // secure: true,
-  host: "/",
+  host: "https://monkfish-app-envaa.ondigitalocean.app/",
   port: "3030",
 });
 
