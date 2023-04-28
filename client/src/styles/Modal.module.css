@@ -17,7 +17,6 @@
     padding: 16px;
     margin-top: -350px;
     height: 428px;
-    /* position: relative; */
     width: 595px;
     
     
@@ -26,23 +25,19 @@
   .modalContainer{
     width: 100%;
     height: 100%;
-    /* background-color: rgba(0, 174, 255, 0.254); */
   }
   .modalLeft {
     /* display: flex;   */
     width: 50%;
     height: 100%;
     border-top-left-radius: 10px;
-    /* background-color: rgba(137, 43, 226, 0.194); */
     display: inline-block;
     vertical-align:top;
   }
   .modalLeftTop {
-    /* display: flex;   */
     width: 100%;
     height: 45%;
     border-top-left-radius: 10px;
-    /* background-color: rgba(43, 226, 208, 0.397); */
     text-align: center;
     vertical-align:top;
   }
@@ -51,22 +46,18 @@
     width: 100%;
     height: 55%;
     border-bottom-left-radius: 10px;
-    /* background-color: rgba(153, 226, 43, 0.353); */
-    /* vertical-align:top; */
     display: inline-block;
   }
   .modalSmallContainer {
     width: 100%;
     margin-bottom: 3%;
-    /* background-color:#cda4a4; */
     display: inline-block;
   }
+
   .modalRight {
-    /* display: flex;   */
     width: 50%;
     height: 100%;
     border-top-right-radius: 10px;
-    /* background-color: rgba(217, 43, 226, 0.145); */
     display: inline-block;
   }
   
@@ -76,10 +67,9 @@
     color: #333;
     cursor: pointer;
     font-size: 24px;
-    position: absolute;
-    top: 145px;
-    left: 1275px;
-    /* background-color: blueviolet; */
+    margin-left: 260px;
+    margin-top: -50px;
+    left: 100px;
   }
   
   .content {
