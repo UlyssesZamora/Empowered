@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/test": "http://localhost:8080",
       "/erase": "http://localhost:8080",
-      "/api/login": "http://localhost:8080",
+      "/api/login": "https://empowerd-backend-5j4ag.ondigitalocean.app/",
       "/api/validation": "http://localhost:8080",
       "/profileData": "http://localhost:8080",
       "/api/userCreation": "http://localhost:8080",
