@@ -38,6 +38,9 @@ import { getDepartmentReviews } from "./getDepartmentReviews";
 import { getDepartment } from "./getDepartment";
 import { editDepartment } from "./editDepartment";
 import { getAllDepartment } from "./getAllDepartment";
+import { addDepartment } from "./addDepartment";
+import { deleteDepartment } from "./deleteDepartment";
+import { deleteDepartmentReview } from "./deleteDepartmentReview";
 
 export const routes: Router = Router();
 
@@ -80,3 +83,6 @@ routes.use(getDepartmentReviews);
 routes.use(getDepartment);
 routes.use(editDepartment);
 routes.use(getAllDepartment);
+routes.use(addDepartment);
+routes.use(deleteDepartment);
+routes.use(deleteDepartmentReview);
