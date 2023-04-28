@@ -55,7 +55,7 @@ const FilterBy: React.FC<ModalProps> = ({ isOpen2, onClose2, children, onSelectS
 // get all skills from database
   const getAllSkills = async () => {
     try {
-      const res = await axios.get("/getAllSkills");
+      const res = await axios.get("https://goldfish-app-wb78d.ondigitalocean.app/getAllSkills");
       setSkillList(res.data);
     } catch (error) {
       console.log(error);
@@ -65,7 +65,7 @@ const FilterBy: React.FC<ModalProps> = ({ isOpen2, onClose2, children, onSelectS
 // get all interests from database
   const getAllInterests = async () => {
     try {
-      const res = await axios.get("/getAllInterests");
+      const res = await axios.get("https://goldfish-app-wb78d.ondigitalocean.app/getAllInterests");
       setInterestList(res.data);
     } catch (error) {
       console.log(error);
@@ -75,7 +75,7 @@ const FilterBy: React.FC<ModalProps> = ({ isOpen2, onClose2, children, onSelectS
 // get all value from database
   const getAllValues = async () => {
     try {
-      const res = await axios.get("/getAllValues");
+      const res = await axios.get("https://goldfish-app-wb78d.ondigitalocean.app/getAllValues");
       setValueList(res.data);
     } catch (error) {
       console.log(error);
