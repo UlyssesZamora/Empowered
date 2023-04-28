@@ -11,7 +11,7 @@ export default defineConfig({
       "/api/login": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/api/validation": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/profileData": "https://goldfish-app-wb78d.ondigitalocean.app/",
-      "/api/userCreation": "https://goldfish-app-wb78d.ondigitalocean.app",
+      "/api/userCreation": "https://goldfish-app-wb78d.ondigitalocean.app/api/userCreation",
       "/api/companylogin": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/api/companyCreation": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/companyProfileData": "https://goldfish-app-wb78d.ondigitalocean.app/",
