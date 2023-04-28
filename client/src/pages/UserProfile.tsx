@@ -40,7 +40,7 @@ const UserProfile = () => {
 
   const getData = async (id: any) => {
     axios
-      .get(`/profileId/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/profileId/${id}`)
       .then((res: any) => {
         setUserData(res.data[0]);
       })
@@ -51,7 +51,7 @@ const UserProfile = () => {
 
   const getReviews = async () => {
     axios
-      .get(`/reviews?userId=${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/reviews?userId=${id}`)
       .then((res: any) => {
         setUserReviews(res.data);
       })
@@ -62,7 +62,7 @@ const UserProfile = () => {
 
   const getUserSkills = async () => {
     axios
-      .get(`/getSkills/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getSkills/${id}`)
       .then((res: any) => {
         setUserSkills(res.data);
       })
@@ -73,7 +73,7 @@ const UserProfile = () => {
 
   const getUserInterests = async () => {
     axios
-      .get(`/getInterests/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getInterests/${id}`)
       .then((res: any) => {
         setUserInterests(res.data);
       })
@@ -84,7 +84,7 @@ const UserProfile = () => {
 
   const getUserValues = async () => {
     axios
-      .get(`/getValues/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getValues/${id}`)
       .then((res: any) => {
         setUserValues(res.data);
       })
@@ -95,7 +95,7 @@ const UserProfile = () => {
 
   const getAllSkills = async () => {
     axios
-      .get("/getAllSkills")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllSkills")
       .then((res: any) => {
         setSkillList(res.data);
       })
@@ -106,7 +106,7 @@ const UserProfile = () => {
 
   const getAllInterests = async () => {
     axios
-      .get("/getAllInterests")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllInterests")
       .then((res: any) => {
         setInterestList(res.data);
       })
@@ -117,7 +117,7 @@ const UserProfile = () => {
 
   const getAllValues = async () => {
     axios
-      .get("/getAllValues")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllValues")
       .then((res: any) => {
         setValueList(res.data);
       })
@@ -128,7 +128,7 @@ const UserProfile = () => {
 
   const submitConRequest = async () => {
     axios
-      .post("/newConnection", {
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/newConnection", {
         followerId: lol.key,
         personWhoGotFollowedId: id,
       })
@@ -143,7 +143,7 @@ const UserProfile = () => {
   const getFollowing = async () => {
     axios
       .get(
-        "/checkFollow?followerId=" + lol.key + "&personWhoGotFollowedId=" + id
+        "https://goldfish-app-wb78d.ondigitalocean.app/checkFollow?followerId=" + lol.key + "&personWhoGotFollowedId=" + id
       )
       .then((res: any) => {
         setIsFollowing(res.data.isFollowing);
