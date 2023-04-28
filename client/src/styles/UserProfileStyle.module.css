@@ -57,6 +57,40 @@
   margin: 1%;
 }
 
+.trashIcon {
+  height: 28px;
+  float: right;
+  margin: 2%;
+}
+.deleteText {
+  visibility: hidden;
+  margin-top: 1%;
+  padding: 5px 0;
+  float: right;
+  font-size: 10px;
+  color: black;
+  margin-top: 8%;
+}
+.trashIcon:hover ~ .deleteText {
+  visibility: visible;
+}
+
+.addIcon {
+  float: right;
+  height: 35px;
+  margin: 2%;
+}
+.addText {
+  visibility: hidden;
+  float: right;
+  font-size: 10px;
+  color: black;
+  margin-top: 10%;
+}
+.addIcon:hover ~ .addText {
+  visibility: visible;
+}
+
 /* ------------------------------------------------------------------------------ */
 /*                         Body  container                                     */
 /* ------------------------------------------------------------------------------ */
