@@ -23,6 +23,7 @@ const UserSignUpCard = ({
           userPassword: formData.password,
         })
         .then((res: { data: any }) => {
+          window.location.href = "/loginpage"
           console.log(res.data);
         })
         .catch((error) => {
