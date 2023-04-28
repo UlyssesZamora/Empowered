@@ -120,7 +120,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ const calendlyConfig = {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -194,7 +194,7 @@ const calendlyConfig = {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
@@ -218,7 +218,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -256,7 +256,7 @@ const calendlyConfig = {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -290,7 +290,7 @@ const calendlyConfig = {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
@@ -312,7 +312,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -351,7 +351,7 @@ const calendlyConfig = {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -385,7 +385,7 @@ const calendlyConfig = {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
@@ -415,13 +415,13 @@ const calendlyConfig = {
 
               {/* <img
                 className={CoffeeChatStyle.editIcon}
-                src="images/edit.png"
+                src="./src/assets/edit.png"
               /> */}
 
               {/* Interests */}
               <p className={CoffeeChatStyle.rightCardHeading}>Filter by category 
               <button onClick= {handleOpen2} className={CoffeeChatStyle.filterButton}>
-               <img src="images/filter.png" />
+               <img src="./src/assets/filter.png" />
               </button>
               {/* <FilterByTest isOpen2={isOpen2} onClose2={handleClose2} interestList={undefined}>
                </FilterByTest> */}
