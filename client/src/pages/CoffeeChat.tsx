@@ -149,7 +149,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="./src/assets/avatar.png"
+                    src="images/avatar.png"
                   />
                 </div>
                 <div>
@@ -189,7 +189,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/leftArrow.png" />
+               <img src="images/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -223,7 +223,7 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/rightArrow.png" />
+               <img src="images/rightArrow.png" />
                </button>
 
                 </div>
@@ -251,7 +251,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="./src/assets/avatar.png"
+                    src="images/avatar.png"
                   />
                 </div>
                 <div>
@@ -289,7 +289,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/leftArrow.png" />
+               <img src="images/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -323,7 +323,7 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/rightArrow.png" />
+               <img src="images/rightArrow.png" />
                </button>
 
                 </div>
@@ -343,7 +343,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="./src/assets/avatar.png"
+                    src="images/avatar.png"
                   />
                 </div>
                 <div>
@@ -382,7 +382,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/leftArrow.png" />
+               <img src="images/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -416,7 +416,7 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="./src/assets/rightArrow.png" />
+               <img src="images/rightArrow.png" />
                </button>
 
                 </div>
@@ -442,13 +442,13 @@ const CoffeeChat = () => {
 
               {/* <img
                 className={CoffeeChatStyle.editIcon}
-                src="./src/assets/edit.png"
+                src="images/edit.png"
               /> */}
 
               {/* Interests */}
               <p className={CoffeeChatStyle.rightCardHeading}>Filter by category 
               <button onClick= {handleOpen2} className={CoffeeChatStyle.filterButton}>
-               <img src="./src/assets/filter.png" />
+               <img src="images/filter.png" />
               </button>
               {/* <FilterByTest isOpen2={isOpen2} onClose2={handleClose2} interestList={undefined}>
                </FilterByTest> */}
