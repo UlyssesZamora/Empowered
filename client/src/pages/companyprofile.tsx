@@ -153,7 +153,7 @@ const CompanyProfile = () => {
   return (
     <div className={UserProfileStyle.pageBackground}>
       <nav className={UserProfileStyle.nav}>
-        <img className={UserProfileStyle.logo} src="../src/assets/image3.png" />
+        <img className={UserProfileStyle.logo} src="/images/image3.png" />
 
         {/* search box */}
         <input
@@ -162,12 +162,12 @@ const CompanyProfile = () => {
           className={UserProfileStyle.search}
         />
         <button className={UserProfileStyle.button}>
-          <img src="../src/assets/search.png" />
+          <img src="/images/search.png" />
         </button>
 
         <img
           className={UserProfileStyle.logoAvatar}
-          src="../src/assets/companyLogo.png"
+          src="/images/companyLogo.png"
         />
       </nav>
       {modalOpen && (
@@ -208,7 +208,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -272,7 +272,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -377,7 +377,7 @@ const CompanyProfile = () => {
               >
                 <img
                   className={UserProfileStyle.addIcon}
-                  src="../src/assets/add.png"
+                  src="/images/add.png"
                 />
                 <span className={UserProfileStyle.addText}>add</span>
               </a>
@@ -391,7 +391,7 @@ const CompanyProfile = () => {
               >
                 <img
                   className={UserProfileStyle.trashIcon}
-                  src="../src/assets/trash.png"
+                  src="/images/trash.png"
                 />
                 <span className={UserProfileStyle.deleteText}>delete</span>
               </a>
