@@ -15,7 +15,7 @@ const UserSignUpCard = ({
   const handleSubmit = () => {
     if (formData.password === formData.confirmPassword) {
       axios
-        .post("/api/userCreation", {
+        .post("https://goldfish-app-wb78d.ondigitalocean.app/api/userCreation", {
           userReferral: formData.referralCode,
           userFirstName: formData.firstName,
           userLastName: formData.lastName,
