@@ -43,7 +43,7 @@ const LoginPage = () => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
             axios
-              .get("/companyProfileData", {
+              .get("https://goldfish-app-wb78d.ondigitalocean.app/companyProfileData", {
                 headers: {
                   authorization: "Bearer: " + localStorage.getItem("jwt"),
                 },
@@ -62,14 +62,14 @@ const LoginPage = () => {
 
   const sendToken = (at: string) => {
     axios
-      .post("/auth", {
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/auth", {
         at: at,
       })
       .then((results: any) => {
         if (results.status === 200) {
           localStorage.setItem("jwt", results.data);
           axios
-            .get("/profileData", {
+            .get("https://goldfish-app-wb78d.ondigitalocean.app/profileData", {
               headers: {
                 authorization: "Bearer: " + localStorage.getItem("jwt"),
               },
