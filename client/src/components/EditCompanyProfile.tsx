@@ -66,7 +66,7 @@ const EditCompanyProfile = ({
     axios
       .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
-        companyImage: "../src/assets/companyLogo.png",
+        companyImage: "/images/companyLogo.png",
       })
       .then((res: any) => {
         console.log(res);
@@ -263,7 +263,7 @@ const EditCompanyProfile = ({
                 <a href="#" onClick={onProfileLogoChange}>
                   <img
                     style={{ width: "30px", height: "30px" }}
-                    src="../src/assets/camera.png"
+                    src="/images/camera.png"
                   />
                 </a>
 
@@ -277,7 +277,7 @@ const EditCompanyProfile = ({
                 <a href="#" onClick={DeleteProfileLogoChange}>
                   <img
                     style={{ width: "30px", height: "30px" }}
-                    src="../src/assets/trash.png"
+                    src="/images/trash.png"
                   />
                 </a>
 

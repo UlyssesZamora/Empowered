@@ -10,8 +10,8 @@
 }
 
 .modalContainer {
-  width: 650px;
-  height: 450px;
+  width: 850px;
+  height: 650px;
   border-radius: 12px;
   background-color: #e4e0d9;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -75,11 +75,11 @@
   border-radius: 10px;
   background-color: rgba(56, 88, 70, 0.5);
   color: rgb(255, 255, 255);
-  
 }
 
 .tagContiner {
   display: flex;
+  flex-wrap: wrap;
   margin: 4%;
 }
 

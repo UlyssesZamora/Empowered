@@ -37,7 +37,7 @@ const CompanyProfile = () => {
   // getting data from api and setting to profile
   const getData = async (id: any) => {
     axios
-      .get(`/companyId/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/companyId/${id}`)
       .then((res: any) => {
         setCompanyData(res.data[0]);
       })
@@ -49,7 +49,7 @@ const CompanyProfile = () => {
   // getting all pros
   const getAllPros = async () => {
     axios
-      .get("/getAllPros")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllPros")
       .then((res: any) => {
         setAllPros(res.data);
       })
@@ -61,7 +61,7 @@ const CompanyProfile = () => {
   //getting Pros for loged in company
   const getPros = async () => {
     axios
-      .get(`/getPros/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getPros/${id}`)
       .then((res: any) => {
         setPros(res.data);
       })
@@ -73,7 +73,7 @@ const CompanyProfile = () => {
   //getting Cons for loged in company
   const getCons = async () => {
     axios
-      .get(`/getCons/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getCons/${id}`)
       .then((res: any) => {
         setCons(res.data);
       })
@@ -85,7 +85,7 @@ const CompanyProfile = () => {
   //getting Cons for logged in company
   const getCompanyReviews = async () => {
     axios
-      .get(`/getCompanyReviews/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getCompanyReviews/${id}`)
       .then((res: any) => {
         setCompanyReview(res.data);
       })
@@ -97,7 +97,7 @@ const CompanyProfile = () => {
   //getting Department Review for logged in company
   const getDepartmentReviews = async () => {
     axios
-      .get(`/getDepartmentReviews/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getDepartmentReviews/${id}`)
       .then((res: any) => {
         setDepartmentReview(res.data);
       })
@@ -109,7 +109,7 @@ const CompanyProfile = () => {
   //getting Department for logged in company
   const getDepartment = async () => {
     axios
-      .get(`/getDepartment/${id}`)
+      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getDepartment/${id}`)
       .then((res: any) => {
         setDepartment(res.data);
       })
@@ -120,7 +120,7 @@ const CompanyProfile = () => {
 
   const getAllDepartment = async () => {
     axios
-      .get("/getAllDepartment")
+      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllDepartment")
       .then((res: any) => {
         setAllDepartment(res.data);
       })
@@ -153,7 +153,7 @@ const CompanyProfile = () => {
   return (
     <div className={UserProfileStyle.pageBackground}>
       <nav className={UserProfileStyle.nav}>
-        <img className={UserProfileStyle.logo} src="../src/assets/image3.png" />
+        <img className={UserProfileStyle.logo} src="/images/image3.png" />
 
         {/* search box */}
         <input
@@ -162,12 +162,12 @@ const CompanyProfile = () => {
           className={UserProfileStyle.search}
         />
         <button className={UserProfileStyle.button}>
-          <img src="../src/assets/search.png" />
+          <img src="/images/search.png" />
         </button>
 
         <img
           className={UserProfileStyle.logoAvatar}
-          src="../src/assets/companyLogo.png"
+          src="/images/companyLogo.png"
         />
       </nav>
       {modalOpen && (
@@ -208,7 +208,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -272,7 +272,7 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.editIcon}
-                      src="../src/assets/edit.png"
+                      src="/images/edit.png"
                     />
                   </a>
                 </>
@@ -377,7 +377,7 @@ const CompanyProfile = () => {
               >
                 <img
                   className={UserProfileStyle.addIcon}
-                  src="../src/assets/add.png"
+                  src="/images/add.png"
                 />
                 <span className={UserProfileStyle.addText}>add</span>
               </a>
@@ -391,7 +391,7 @@ const CompanyProfile = () => {
               >
                 <img
                   className={UserProfileStyle.trashIcon}
-                  src="../src/assets/trash.png"
+                  src="/images/trash.png"
                 />
                 <span className={UserProfileStyle.deleteText}>delete</span>
               </a>
