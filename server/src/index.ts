@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import mysql, { Connection, createPool, Pool } from "mysql";
 import { DATA_SOURCE } from "../config/vars.config";
 import { routes } from "./routes/index";
+const cors = require('cors');
 import socketio from 'socket.io'
 export const saltRounds = 10;
 const dataSource = DATA_SOURCE.mySqlDataSource;
@@ -23,6 +24,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+app.use(cors());
 
 // Try to generate connection pool and establish connection to DB otherwise throw error.
 try {
