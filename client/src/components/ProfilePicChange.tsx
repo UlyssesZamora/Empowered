@@ -85,7 +85,7 @@ const ProfilePicChange = ({
       reader.onload = () => {
         const imageDataUrl = reader.result;
         axios
-          .put("/updatePhoto", { userId: userId, userImage: imageDataUrl })
+          .put("https://goldfish-app-wb78d.ondigitalocean.app/updatePhoto", { userId: userId, userImage: imageDataUrl })
           .then((res: any) => {
             console.log(res);
             window.location.reload();
@@ -102,7 +102,7 @@ const ProfilePicChange = ({
   const updateBioAndSkills = () => {
     console.log(textareaRef.current.value);
     axios
-      .put("/updateBioAndSkills", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateBioAndSkills", {
         userId: userId,
         userBio: textareaRef.current.value,
       })
@@ -118,7 +118,7 @@ const ProfilePicChange = ({
   const updateIntro = () => {
     console.log(firstName, lastName, position, company, location);
     axios
-      .put("/editIntro", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/editIntro", {
         userId: userId,
         userFirstName: firstName,
         userLastName: lastName,
@@ -136,7 +136,7 @@ const ProfilePicChange = ({
 
   const handleInterestUpdate = () => {
     axios
-    .post("/addUserInterest", {userId:userId, userInterests: JSON.stringify(interestArr)})
+    .post("https://goldfish-app-wb78d.ondigitalocean.app/addUserInterest", {userId:userId, userInterests: JSON.stringify(interestArr)})
     .then((res:any) => {
         console.log(res)
         window.location.reload()
@@ -199,7 +199,7 @@ const ProfilePicChange = ({
   
   const handleValueUpdate = () => {
     axios
-    .post("/addUserValues", {userId:userId, userValues: JSON.stringify(valueArr)})
+    .post("https://goldfish-app-wb78d.ondigitalocean.app/addUserValues", {userId:userId, userValues: JSON.stringify(valueArr)})
     .then((res:any) => {
         console.log(res)
         window.location.reload()
