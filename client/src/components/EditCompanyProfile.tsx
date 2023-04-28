@@ -64,7 +64,7 @@ const EditCompanyProfile = ({
   //DeleteProfileLogoChange
   const DeleteProfileLogoChange = () => {
     axios
-      .put("/api/updateLogo", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
         companyImage: "../src/assets/companyLogo.png",
       })
@@ -98,7 +98,7 @@ const EditCompanyProfile = ({
   //  update New Info of company to DB
   const updateNewInfo = () => {
     axios
-      .put("/updateCompanyInfo", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyInfo", {
         companyId: companyId,
         companyName: newcompanyName,
         companyLocation: newcompanyLocation,
@@ -115,7 +115,7 @@ const EditCompanyProfile = ({
   //  update New CompanyMission to DB
   const updateNewCompanyMission = () => {
     axios
-      .put("/updateCompanyMission", {
+      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyMission", {
         companyId: companyId,
         companyMission: updateCompanyMission.current.value,
       })
@@ -173,7 +173,7 @@ const EditCompanyProfile = ({
         if (review.companydepartmentId === deptID) {
           console.log(deptID);
           axios
-            .delete(`/deleteDepartmentReview/${review.id}`)
+            .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`)
             .then((res: any) => {
               console.log(res);
             })
@@ -191,7 +191,7 @@ const EditCompanyProfile = ({
     deleteDepartmentID.map((deptID: any) => {
       // console.log(deptID);
       axios
-        .delete(`/deleteDepartment/${deptID}`)
+        .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`)
         .then((res: any) => {
           console.log(res);
           window.location.reload();
@@ -226,7 +226,7 @@ const EditCompanyProfile = ({
   //adding newdepartment  to DB
   const handleAdd = () => {
     axios
-      .post("/addDepartment", {
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
         newDepartmentList: departmentList,
         oldDepartmentList: companyDepartment,
       })
