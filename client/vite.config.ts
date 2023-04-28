@@ -6,12 +6,12 @@ export default defineConfig({
   server: {
     // port: 3000,  // to change the port from default
     proxy: {
-      "/test": "https://goldfish-app-wb78d.ondigitalocean.app/",
-      "/erase": "https://goldfish-app-wb78d.ondigitalocean.app/",
+      "/test": "https://goldfish-app-wb78d.ondigitalocean.app",
+      "/erase": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/api/login": "https://goldfish-app-wb78d.ondigitalocean.app",
-      "/api/validation": "https://goldfish-app-wb78d.ondigitalocean.app/",
+      "/api/validation": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/profileData": "https://goldfish-app-wb78d.ondigitalocean.app/",
-      "/api/userCreation": "https://goldfish-app-wb78d.ondigitalocean.app/",
+      "/api/userCreation": "https://goldfish-app-wb78d.ondigitalocean.app",
       "/api/companylogin": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/api/companyCreation": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/companyProfileData": "https://goldfish-app-wb78d.ondigitalocean.app/",
