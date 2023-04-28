@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Modal.module.css";
 import CoffeeChatStyle from "../styles/CoffeeChatStyle.module.css";
+import { PopupButton } from "react-calendly";
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,14 +10,29 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
-console.log("Modal rendered");
 
   const [isVisible, setIsVisible] = useState<boolean>(isOpen);
+  const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
 
   const handleClose = () => {
     setIsVisible(false);
     onClose();
   };
+  useEffect(() => {
+    const element = document.getElementById("root");
+    if (element instanceof HTMLElement) {
+      setRootElement(element);
+    }
+  }, []);
+
+  // Define the configuration object as a constant
+  const calendlyConfig = {
+  url: 'https://calendly.com/dreasachz02',
+  text: 'Schedule time with me',
+  color: '#0069ff',
+  textColor: '#ffffff',
+  branding: true
+};
 
   return isOpen ? (
     <div className={styles.modalOverlay}>
@@ -31,10 +47,10 @@ console.log("Modal rendered");
            <div>
             <p className={CoffeeChatStyle.connectionCardNameModal}>
               Profile Name
-              <p className={CoffeeChatStyle.connectionCardJobTitleModal}>
+            </p>
+            <p className={CoffeeChatStyle.connectionCardJobTitleModal}>
                 job title
                 </p>
-            </p>
            </div>
         </div>
         <div className={styles.modalLeftBottom}>
@@ -61,8 +77,11 @@ console.log("Modal rendered");
 
       <div className={styles.modalRight}>
         {/* Upcoming Availability */}
-
+        <button className={styles.closeButton} onClick={handleClose}>
+          &times;
+        </button>
         <div className={CoffeeChatStyle.smallContainer}>
+          
                    <div className = {CoffeeChatStyle.connectionCardCategories}>Upcoming Availability</div>
                 </div>
 
@@ -138,13 +157,34 @@ console.log("Modal rendered");
                <button className={CoffeeChatStyle.scheduleMeetingButton}>
                Request a meeting time
                </button>
+                {/* <div>
+                {rootElement && (
+                  <PopupButton
+                    url="https://calendly.com/dreasachz02"
+                    rootElement={rootElement}
+                    text="Click here to schedule!"
+                    className = {CoffeeChatStyle.scheduleMeetingButton}
+                  />
+                )}
+                </div> */}
+
+               </div>
+               <div className = {CoffeeChatStyle.smallContainerRequestMeetingCalendly}>
+                <div>
+                {rootElement && (
+                  <PopupButton
+                    url="https://calendly.com/usertestemail100"
+                    rootElement={rootElement}
+                    text="connect with Calendly"
+                    className = {CoffeeChatStyle.scheduleMeetingCalendlyButton}
+                  />
+                )}
+                </div>
+
                </div>
 
       </div>
 
-        <button className={styles.closeButton} onClick={handleClose}>
-          &times;
-        </button>
         <div className={styles.content}>{children}</div>
       </div>
       </div>
