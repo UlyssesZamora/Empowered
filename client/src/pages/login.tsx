@@ -17,7 +17,7 @@ const LoginPage = () => {
   const submitHandler = () => {
     if (AccountSelected.currentLogin === 0) {
       axios
-        .post("https://empowerd-backend-5j4ag.ondigitalocean.app/api/login", { user: userName, password })
+        .post("http://174.138.84.106:8080/api/login", { user: userName, password })
         .then((res: any) => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
