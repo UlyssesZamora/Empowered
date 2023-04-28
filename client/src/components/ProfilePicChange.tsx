@@ -243,7 +243,7 @@ const ProfilePicChange = ({
                 <a href="#" onClick={onProfilePhotoChange}>
                   <img
                     style={{ width: "30px", height: "30px" }}
-                    src="../src/assets/camera.png"
+                    src="images/camera.png"
                   />
                 </a>
 
@@ -257,7 +257,7 @@ const ProfilePicChange = ({
                 <a href="#">
                   <img
                     style={{ width: "30px", height: "30px" }}
-                    src="../src/assets/trash.png"
+                    src="images/trash.png"
                   />
                 </a>
 
