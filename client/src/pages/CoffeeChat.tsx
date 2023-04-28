@@ -1,87 +1,63 @@
 import CoffeeChatStyle from "../styles/CoffeeChatStyle.module.css";
-import { useEffect,useState } from "react";
+import { useState } from "react";
 import Modal from "../components/Modal";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import FilterBy from "../components/FilterBy";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
-let owner: boolean = false;
 
 const CoffeeChat = () => {
 
-  const navigate = useNavigate();
-  const [interestList, setInterestList] = useState<any[]>([]);
-  const [savedInterests, setSavedInterests] = useState<string[]>([]);
-  const [userInterests, setUserInterests] = useState<any[]>([]);
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
-  // const savedInterests: string[] = ["Interest 1", "Interest 2", "Interest 3"];
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
+
+  // const [email, setEmail] = useState<string[]>([]);
 
 
-  const handleInterestsSubmit = (interests: any[]) => {
-    setSelectedInterests(interests.map((interest) => interest.interest));
+  const onSelectSkills = (skillArr: string[]) => {
+    setSelectedSkills(skillArr);
   };
 
-  const handleInterestSaved = (interests: string[]) => {
-    setSavedInterests(interests);
+  const onSelectInterests = (interestArr: string[]) => {
+    setSelectedInterests(interestArr);
+  };
+
+  const onSelectValues = (valueArr: string[]) => {
+    setSelectedValues(valueArr);
   };
 
 
-
-  /// Will change later ////
+  /// Can be changed to switch case ////
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  console.log("Modal opened");
 
   const [isOpen2, setIsOpen2] = useState<boolean>(false);
-  console.log("Modal opened");
 
   const handleOpen = () => {
-    console.log("Modal opened");
     setIsOpen(true);
   };
   const handleOpen2 = () => {
-    console.log("Modal opened");
     setIsOpen2(true);
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    console.log("Modal closed");
   };
   const handleClose2 = () => {
     setIsOpen2(false);
-    console.log("Modal closed");
   };
+// Define the configuration object as a constant
+const calendlyConfig = {
+  url: 'https://calendly.com/dreasachz02',
+  text: 'Schedule time with me',
+  color: '#0069ff',
+  textColor: '#ffffff',
+  branding: true
+};
 
-  // const handleInterestUpdate = () => {
-  //   axios
-  //   .post("/addUserInterest", {userInterests: JSON.stringify(interestArr)})
-  //   .then((res:any) => {
-  //       console.log(res)
-  //       window.location.reload()
-  //   })
-  //   .catch((error) => {
-  //       console.log(error)
-  //   })
-  // };
-
-  const getAllInterests = async () => {
-    axios
-      .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllInterests")
-      .then((res: any) => {
-        setInterestList(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-
-  useEffect(() => {
-    getAllInterests();
-  });
+  const redirectToVideoChat = () => {
+    window.location.href = "http://localhost:3030/";
+  }
 
 
 
@@ -89,11 +65,6 @@ const CoffeeChat = () => {
     <div className={CoffeeChatStyle.pageBackground}>
       {/* @ts-expect-error Server Component */}
       <NavBar></NavBar>
-
-      {/* <Modal isOpen={isOpen} onClose={handleClose}>
-               <h2>Modal Title</h2>
-               <p>This is the content of the modal.</p>
-      </Modal> */}
 
 
       {/* body */}
@@ -136,7 +107,7 @@ const CoffeeChat = () => {
               </p>
               </div>
               <div className = {CoffeeChatStyle.smallContainerChatNow}>
-              <button className={CoffeeChatStyle.chatNowButton}>
+              <button className={CoffeeChatStyle.chatNowButton} onClick={redirectToVideoChat}>
                Chat Now
               </button>
               </div>
@@ -149,7 +120,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -189,7 +160,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -223,7 +194,7 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
@@ -235,11 +206,7 @@ const CoffeeChat = () => {
                </button>
               {/* Schedule a Meeting Command */}
                <Modal isOpen={isOpen} onClose={handleClose}>
-               {/* <h2>Modal Title</h2>
-               <p>This is the content of the modal.</p> */}
                </Modal>
-
-
                </div>
 
               </div>
@@ -251,7 +218,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -289,7 +256,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -323,16 +290,18 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
 
 
                <div className = {CoffeeChatStyle.smallContainerScheduleMeeting}>
-               <button className={CoffeeChatStyle.scheduleMeetingButton}>
+               <button className={CoffeeChatStyle.scheduleMeetingButton} >
                Schedule a meeting
                </button>
+
+
                </div>
               </div>
 
@@ -343,7 +312,7 @@ const CoffeeChat = () => {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="./src/assets/avatar.png"
                   />
                 </div>
                 <div>
@@ -382,7 +351,7 @@ const CoffeeChat = () => {
                <div className = {CoffeeChatStyle.smallContainerAvailability}>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/leftArrow.png" />
+               <img src="./src/assets/leftArrow.png" />
                </button>
 
                  {/* Availability 1 */}
@@ -416,7 +385,7 @@ const CoffeeChat = () => {
                 </div>
 
                <button className={CoffeeChatStyle.dateAvailableButton}>
-               <img src="images/rightArrow.png" />
+               <img src="./src/assets/rightArrow.png" />
                </button>
 
                 </div>
@@ -430,7 +399,11 @@ const CoffeeChat = () => {
                </button>
                </div>
 
-              </div>    
+              </div>
+          {/*connection card end*/}
+
+          
+              
             </div>   
           </div>
           {/*connection card end*/}
@@ -442,127 +415,68 @@ const CoffeeChat = () => {
 
               {/* <img
                 className={CoffeeChatStyle.editIcon}
-                src="images/edit.png"
+                src="./src/assets/edit.png"
               /> */}
 
               {/* Interests */}
               <p className={CoffeeChatStyle.rightCardHeading}>Filter by category 
               <button onClick= {handleOpen2} className={CoffeeChatStyle.filterButton}>
-               <img src="images/filter.png" />
+               <img src="./src/assets/filter.png" />
               </button>
               {/* <FilterByTest isOpen2={isOpen2} onClose2={handleClose2} interestList={undefined}>
                </FilterByTest> */}
 
-              <FilterBy isOpen2={isOpen2} onClose2={handleClose2}>
-               </FilterBy> 
-
-              {/* <FilterBy isOpen2={isOpen2} onClose2={handleClose2} onInterestSaved={handleInterestSaved}>
+              {/* <FilterBy isOpen2={isOpen2} onClose2={handleClose2}>
                </FilterBy>  */}
+              <FilterBy isOpen2={isOpen2} onClose2={handleClose2} 
+              onSelectSkills={onSelectSkills} onSelectInterests={onSelectInterests} 
+              onSelectValues= {onSelectValues} />
 
+      {/* Render FilterBy component and pass onSelectInterests prop */}
+      {/* Render other components and pass selectedInterests as props */}
 
 
                
               </p>
 
-              <div className={CoffeeChatStyle.smallContainer}>
+              <div className={CoffeeChatStyle.smallContainerRight}>
                 <div className = {CoffeeChatStyle.rightCardCategories}>Interests</div>
-
-
-                {/* {interestList.map((interest) => (
-                    <div
-                      key={interest.id}
-                      className={CoffeeChatStyle.rightTag}
-                      // style={{
-                      //   margin: "0.5rem",
-                      //   whiteSpace: "nowrap",
-                      //   textOverflow: "ellipsis",
-                      // }}
-                    >
-                      {interest.interest}
-                    </div>
-                  ))} */}
-
-                  {/* {savedInterests.map((interest) => (
-                  <div
-                    key={interest}
-                    className={CoffeeChatStyle.rightTag}
-                    // style={{
-                    //   margin: "0.5rem",
-                    //   whiteSpace: "nowrap",
-                    //   textOverflow: "ellipsis",
-                    // }}
-                  >
-                    {interest}
-                  </div>
-                ))} */}
-
-                {/* <div>
-                  <h2>Saved Interests:</h2>
-                  {savedInterests.map((interest) => (
-                    <div key={interest}>{interest}</div>
+                <div>
+                  {selectedInterests.map((interest) => (
+                    <div className={CoffeeChatStyle.rightTag}>{interest}</div>
                   ))}
-                </div> */}
-      <div>
+                </div>
 
-        {/* {selectedInterests.map((interest) => (
-          <div key={interest} className={CoffeeChatStyle.rightTag}>
-            {interest}
-          </div>
-        ))} */}
-
-
-
-      </div>
-
-
-                <div className={CoffeeChatStyle.rightTag}>interest</div>
-                <div className={CoffeeChatStyle.rightTag}>interest</div>
-                
               </div>
 
 
               {/* Values */}
-              <div className={CoffeeChatStyle.smallContainer}>
+              <div className={CoffeeChatStyle.smallContainerRight}>
                 <div className = {CoffeeChatStyle.rightCardCategories}>Values</div>
-                <div className={CoffeeChatStyle.rightTag}>value</div>
-                <div className={CoffeeChatStyle.rightTag}>value</div>
+                {/* <div className={CoffeeChatStyle.rightTag}>value</div>
+                <div className={CoffeeChatStyle.rightTag}>value</div> */}
+                <div>
+                  {selectedValues.map((values) => (
+                    <div className={CoffeeChatStyle.rightTag}>{values}</div>
+                  ))}
+                </div>
               </div>
 
 
               {/* Skills */}
-              <div className={CoffeeChatStyle.smallContainer}>
+              <div className={CoffeeChatStyle.smallContainerRight}>
                 <div className = {CoffeeChatStyle.rightCardCategories}>Skills</div>
-                <div className={CoffeeChatStyle.rightTag}>skill</div>
-                <div className={CoffeeChatStyle.rightTag}>skill</div>
+                {/* <div className={CoffeeChatStyle.rightTag}>skill</div>
+                <div className={CoffeeChatStyle.rightTag}>skill</div> */}
+                <div>
+                  {selectedSkills.map((skill) => (
+                    <div className={CoffeeChatStyle.rightTag}>{skill}</div>
+                  ))}
+                </div>
               </div>            
 
             </div>
 
-
-
-            {/* Instant Coffee Start*/}
-
-            {/* <div className={CoffeeChatStyle.instantCoffeeCard}>
-              
-            <div className={CoffeeChatStyle.smallContainer}>
-              <p className={CoffeeChatStyle.instantCoffeeTitle}>
-                Instant Coffee
-              </p>
-              <p className={CoffeeChatStyle.instantCoffeeDescription}>
-              Do you have a minute to connect? 
-              <br>
-              </br>
-              Chat with other members instantly!
-              </p>
-              </div>
-              <div className = {CoffeeChatStyle.smallContainerChatNow}>
-              <button className={CoffeeChatStyle.chatNowButton}>
-               Chat Now
-              </button>
-              </div>
-
-            </div> */}
-            {/* Instant Coffee End*/}
 
           </div>
         </div>
