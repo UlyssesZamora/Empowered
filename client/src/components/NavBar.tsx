@@ -41,9 +41,7 @@ const [modalOpen, setOpenModal] = useState(false);
   else if(pwd === "/loginpage"){
     return (
       <nav className={NavBarStyle.loginNav}>
-        <a href="/">
-        <img id="logo" src="/images/img_empowerd1.png" className={NavBarStyle.loginLogo}/>
-        </a>
+       
       </nav>
     );
   }
@@ -125,9 +123,7 @@ const [modalOpen, setOpenModal] = useState(false);
         )}
         <div className={styles.inp_and_img}>
           <div className={styles.empowerd1}>
-            <a href="/">
-              <img id="logo" src="/images/img_empowerd1.png" className={NavBarStyle.logo}/>
-            </a>
+            
           </div>
           <div>
             <input
