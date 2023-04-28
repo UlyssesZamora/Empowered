@@ -9,7 +9,7 @@ myVideo.muted = true;
 
 var peer = new Peer(undefined, {
   // path: "/peerjs",
-  // secure: true,
+  secure: true,
   host: "https://monkfish-app-envaa.ondigitalocean.app/",
   port: "443",
 });
