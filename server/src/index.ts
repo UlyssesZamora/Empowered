@@ -71,6 +71,10 @@ io.on('connection', (socket) => {
     })
 })
 
+app.get("/", async (req, res) => {
+    res.send("Express + Typescript Server is running...");
+  });
+
 
 //Server port listener
 server.listen(port, () => {
