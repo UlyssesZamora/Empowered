@@ -402,8 +402,10 @@ const calendlyConfig = {
               </div>
           {/*connection card end*/}
 
-          
-              
+          {/* Schedule a Meeting Command */}
+          <Modal isOpen={isOpen} onClose={handleClose}>
+          </Modal>
+             
             </div>   
           </div>
           {/*connection card end*/}
