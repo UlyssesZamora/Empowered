@@ -28,7 +28,7 @@ const UserProfile = () => {
   const [modalOpen, setOpenModal] = useState(false);
   const [userBio, setUserBio] = useState("");
   const [isFollowing, setIsFollowing] = useState(false);
-  const [testModal, setTestModal] = useState(false);
+  const [userFollowers, setUserFollowers] = useState<any[]>([]);
   const { id } = useParams();
 
   if (localStorage.getItem("jwt") === null) {
@@ -84,6 +84,16 @@ const UserProfile = () => {
         console.log(error);
       });
   };
+
+  const getFollowerInfo = async () => {
+    axios.get(`https://goldfish-app-wb78d.ondigitalocean.app/getFollowerInfo?followedId=${id}`)
+    .then((res:any) => {
+        setUserFollowers(res.data);
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+  }
 
   const getUserValues = async () => {
     axios
@@ -169,6 +179,7 @@ const UserProfile = () => {
     getAllInterests();
     getAllValues();
     getFollowing();
+    getFollowerInfo();
   }, [id]);
 
   console.log(isFollowing);
@@ -261,7 +272,7 @@ const UserProfile = () => {
                 </p>
 
                 <p className={UserProfileStyle.profileCardVetted} style={{marginTop:'300px'}}>
-                  10 connections
+                  {userFollowers.length} connections
                 </p>
                 <p className={UserProfileStyle.profileCardVetted}>
                   Vetted 2023
@@ -762,12 +773,10 @@ const UserProfile = () => {
               <div className={UserProfileStyle.rightCard}>
                 {owner && (
                   <>
-                    <a href="#" onClick={() => setTestModal(true)}>
                         <img
                         className={UserProfileStyle.editIcon}
                         src="images/edit.png"
                         />
-                    </a>
                   </>
                 )}
 
