@@ -1,8 +1,10 @@
 import a from "../styles/profilePicChange.module.css";
 import styles from "../styles/loginPage.module.css";
 import userProfile from "../styles/UserProfileStyle.module.css";
+import userIcon from "../assets/user-01-svgrepo-com.svg";
 import axios from "axios";
 import { useEffect, useState, useRef, SetStateAction } from "react";
+import { useParams, useLocation, useNavigate, Navigate } from "react-router-dom";
 import InputBox from "./inputBox";
 
 const ProfilePicChange = ({
@@ -19,6 +21,7 @@ const ProfilePicChange = ({
   valueList,
   userInterests,
   userValues,
+  userFollowers
 }: {
   closeModal: (arg: boolean) => void;
   userImage: string;
@@ -33,6 +36,7 @@ const ProfilePicChange = ({
   valueList:any;
   userInterests:any;
   userValues:any;
+  userFollowers:any;
 }) => {
   const [firstName, setFirstName] = useState(""); // State for input value 1
   const [lastName, setLastName] = useState(""); // State for input value 2
@@ -42,6 +46,7 @@ const ProfilePicChange = ({
   const [value, setValue] = useState("");
   const [interestArr, setInterestArr] = useState(userInterests);
   const [valueArr, setValueArr] = useState(userValues)
+  const navigate = useNavigate();
 
   const handleFirstNameChange = (value: string) => {
     setFirstName(value); // Update state with input value 1
@@ -558,6 +563,42 @@ const ProfilePicChange = ({
 
             </button>
           </div>
+        </div>
+      )}
+
+      {userBio === 'followerCount' && (
+        <div>
+            <div className={a.modalContainer} style={{width:'495px', height:'550px'}}>
+        <div className={a.titleCloseBtn}>
+          <div style={{marginRight:'343px'}}>
+            Followers
+          </div>
+          <button
+            onClick={() => {
+              closeModal(false);
+            }}
+          >
+            X
+          </button>
+        </div>
+
+        <div style={{ backgroundColor: "black", height: "1px", marginLeft:'-24px', marginRight:'-24px' }}></div>
+        <p style={{fontFamily:'Montserrat'}}>Follower List</p>
+
+        {userFollowers.map((follower:any) => (
+        <>
+            <div style={{display:'flex', marginTop:'5px', marginBottom:'5px'}}>
+                <img src={follower.userProfilePicture ? follower.userProfilePicture: userIcon} style={{width:'13%', borderRadius:'50%'}} alt="user icon"/>
+                <div style={{marginLeft:'10px'}}>
+                    <p style={{fontFamily:'Montserrat', cursor:'pointer'}} onClick={() => {navigate(`/userprofile/${follower.id}`); window.location.reload()}}>{follower.userFirstName + " "+ follower.userLastName}</p>
+                    <p style={{fontFamily:'Montserrat', fontSize:'10px', marginTop:'-15px'}}>{follower.userCompanyName}</p>
+                </div>
+            </div>
+            <div style={{ backgroundColor: "black", height: "1px", marginLeft:'-24px', marginRight:'-24px' }}></div>
+        </>
+        ))}
+
+      </div>
         </div>
       )}
 
