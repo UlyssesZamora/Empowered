@@ -10,7 +10,6 @@ import axios from "axios";
 import ProfilePicChange from "../components/ProfilePicChange";
 import userIcon from "../assets/user-01-svgrepo-com.svg";
 import jwtDecode from "jwt-decode";
-import Popup from 'reactjs-popup';
 // import NavBar from "../components/NavBar";
 
 let owner: boolean = false;
@@ -28,7 +27,7 @@ const UserProfile = () => {
   const [modalOpen, setOpenModal] = useState(false);
   const [userBio, setUserBio] = useState("");
   const [isFollowing, setIsFollowing] = useState(false);
-  const [testModal, setTestModal] = useState(false);
+  const [userFollowers, setUserFollowers] = useState<any[]>([]);
   const { id } = useParams();
 
   if (localStorage.getItem("jwt") === null) {
@@ -84,6 +83,16 @@ const UserProfile = () => {
         console.log(error);
       });
   };
+
+  const getFollowerInfo = async () => {
+    axios.get(`https://goldfish-app-wb78d.ondigitalocean.app/getFollowerInfo?followedId=${id}`)
+    .then((res:any) => {
+        setUserFollowers(res.data);
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+  }
 
   const getUserValues = async () => {
     axios
@@ -169,6 +178,7 @@ const UserProfile = () => {
     getAllInterests();
     getAllValues();
     getFollowing();
+    getFollowerInfo();
   }, [id]);
 
   console.log(isFollowing);
@@ -205,9 +215,9 @@ const UserProfile = () => {
             valueList={valueList}
             userInterests={userInterests}
             userValues={userValues}
+            userFollowers={userFollowers}
           />
         )}
-
 
         {/* body */}
         <div className={UserProfileStyle.container}>
@@ -260,9 +270,14 @@ const UserProfile = () => {
                   {userData.userLocation}
                 </p>
 
-                <p className={UserProfileStyle.profileCardVetted} style={{marginTop:'300px'}}>
-                  10 connections
-                </p>
+                <a href="#" onClick={() => {
+                    setOpenModal(true);
+                    setUserBio('followerCount')
+                }}>
+                    <p className={UserProfileStyle.profileCardVetted} style={{marginTop:'300px'}}>
+                    {userFollowers.length} connections
+                    </p>
+                </a>
                 <p className={UserProfileStyle.profileCardVetted}>
                   Vetted 2023
                 </p>
@@ -762,12 +777,10 @@ const UserProfile = () => {
               <div className={UserProfileStyle.rightCard}>
                 {owner && (
                   <>
-                    <a href="#" onClick={() => setTestModal(true)}>
                         <img
                         className={UserProfileStyle.editIcon}
                         src="images/edit.png"
                         />
-                    </a>
                   </>
                 )}
 
