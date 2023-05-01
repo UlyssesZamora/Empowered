@@ -17,7 +17,7 @@ acceptFollowers.put("/acceptFollowers", async (req, res) => {
       throw err;
     } else {
         sql = "INSERT INTO userfollowers (followerId, followedId, status) VALUES (?, ?, 'accepted')";
-        pool.query(sql, [followerId, followedId], async (err, results) => {
+        pool.query(sql, [followedId, followerId], async (err, results) => {
             if(err) {
                 console.error('Error user follower into table:', err);
                 res.status(500).json({ error: 'Error user follower into table' });
