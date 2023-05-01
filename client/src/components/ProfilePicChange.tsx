@@ -38,11 +38,11 @@ const ProfilePicChange = ({
   userValues:any;
   userFollowers:any;
 }) => {
-  const [firstName, setFirstName] = useState(""); // State for input value 1
-  const [lastName, setLastName] = useState(""); // State for input value 2
+  const [firstName, setFirstName] = useState(userFirstName); // State for input value 1
+  const [lastName, setLastName] = useState(userLastName); // State for input value 2
   const [position, setPosition] = useState("");
-  const [company, setCompany] = useState(""); // State for input value 1
-  const [location, setLocation] = useState(""); // State for input value 2
+  const [company, setCompany] = useState(userCompany); // State for input value 1
+  const [location, setLocation] = useState(userLocation); // State for input value 2
   const [value, setValue] = useState("");
   const [interestArr, setInterestArr] = useState(userInterests);
   const [valueArr, setValueArr] = useState(userValues)
