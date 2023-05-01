@@ -1,464 +1,492 @@
 /* css used for user profile and company profile */
 * {
-  box-sizing: border-box;
-}
-
-.pageBackground {
-  background-color: #e4e0d9;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         Header  navigater                                      */
-/* ------------------------------------------------------------------------------ */
-
-.nav {
-  display: flex;
-  background-color: #1d3628;
-  height: 2%;
-  width: 100%;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  margin-left: 100px;
-}
-
-.logoAvatar {
-  width: 50px;
-  height: 50px;
-  margin-right: 100px;
-  margin-top: 13px;
-  float: right;
-  margin-left: auto;
-}
-
-.search {
-  position: static;
-  margin: 2% 0 1% 1%;
-  width: 200px;
-  height: 30px;
-  background: #e4e0d9;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-}
-
-.button {
-  height: 30px;
-  width: 30px;
-  margin-top: 2%;
-  border-bottom-right-radius: 8px;
-  border-top-right-radius: 8px;
-  background: #e4e0d9;
-}
-
-.editIcon {
-  float: right;
-  margin: 1%;
-}
-
-.trashIcon {
-  height: 28px;
-  float: right;
-  margin: 2%;
-}
-.deleteText {
-  visibility: hidden;
-  margin-top: 1%;
-  padding: 5px 0;
-  float: right;
-  font-size: 10px;
-  color: black;
-  margin-top: 8%;
-}
-.trashIcon:hover ~ .deleteText {
-  visibility: visible;
-}
-
-.addIcon {
-  float: right;
-  height: 35px;
-  margin: 2%;
-}
-.addText {
-  visibility: hidden;
-  float: right;
-  font-size: 10px;
-  color: black;
-  margin-top: 10%;
-}
-.addIcon:hover ~ .addText {
-  visibility: visible;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         Body  container                                     */
-/* ------------------------------------------------------------------------------ */
-
-.container {
-  margin: auto;
-  width: 95%;
-  height: 100%;
-  margin-top: 1%;
-  padding: 10px;
-}
-
-.containerRow {
-  height: 480px;
-}
-
-.secounContainerRow {
-  display: flex;
-  height: 100%;
-  margin-top: 3%;
-}
-
-.leftcontainer {
-  width: 80%;
-  margin-right: 1%;
-}
-
-.rightContainer {
-  width: 20%;
-}
-
-.textcontiner {
-  margin: auto;
-  width: 95%;
-}
-
-.tagContiner {
-  display: flex;
-}
-
-.smallContainer {
-  width: 90%;
-  margin: 5%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         profileCard                                            */
-/* ------------------------------------------------------------------------------ */
-
-.profileCard {
-  height: 480px;
-
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.profileCardTop {
-  height: 240px;
-  background: rgba(56, 88, 70, 0.5);
-}
-
-.profileCardLogoAvatar {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  margin-left: 40%;
-  margin-top: 100px;
-  background: #e4e0d9;
-  border-radius: 100px;
-}
-
-.profileCardAccountName {
-  position: absolute;
-  margin-left: 61px;
-  margin-top: 303px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.profileCardPositionTitle {
-  position: absolute;
-  margin-left: 61px;
-  margin-top: 341px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.profileCardLocation {
-  position: absolute;
-  margin-left: 61px;
-  margin-top: 412px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.profileCardVetted {
-  position: absolute;
-  margin-left: 80%;
-  margin-top: 344px;
-  margin-right: 7%;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                          Left Card                                             */
-/* ------------------------------------------------------------------------------ */
-.leftCard {
-  width: 100%;
-
-  margin-top: 2%;
-  margin-bottom: 2%;
-
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.cardHeading {
-  margin-left: 50px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 159.4%;
-
-  color: #000000;
-}
-
-.aboutMeCardtext {
-  text-indent: 50px;
-  margin-left: 20px;
-  margin-top: 30px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.ratingLable {
-  margin-left: 20px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.tag {
-  width: fit-content;
-  height: 30px;
-  margin: 2%;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  background: #c5c5c5;
-  border-radius: 20px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  color:white;
-  background-color:#385846;
-  border-color:green; 
-  border:solid
-
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         Review Card                                          */
-/* ------------------------------------------------------------------------------ */
-.reviewCardCointiner {
-  display: flex;
-}
-
-.reviewCard {
-  margin: 3%;
-  width: 270px;
-  height: 240px;
-  background: rgba(56, 88, 70, 0.1);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(2px);
-}
-
-.reviewCardTop {
-  display: flex;
-}
-
-.reviewCardAvatar {
-  width: 36px;
-  height: 36px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.reviewCardName {
-  width: 124px;
-  height: 26px;
-  margin-left: 16px;
-  margin-top: 20px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 159.4%;
-
-  letter-spacing: 0.1em;
-
-  color: #000000;
-}
-
-.review {
-  text-indent: 50px;
-  margin-left: 20px;
-  margin-top: 30px;
-  margin-right: 30px;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 159.4%;
-
-  color: #000000;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         right Card                                           */
-/* ------------------------------------------------------------------------------ */
-
-.rightCard {
-  margin-top: 8%;
-
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.rightCardHeading {
-  margin: 3%;
-
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 159.4%;
-
-  color: #000000;
-}
-
-.rightTag {
-  width: fit-content;
-  block-size: fit-content;
-  height: 30px;
-  margin: 2%;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  background: #c5c5c5;
-  border-radius: 20px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  color: green;
-  background-color: white;
-  border-color: green;
-  border: solid;
-}
-
-.calanderCard {
-  max-width: 600px;
-  margin: auto;
-  margin-top: 20px;
-  background-color: rgba(56, 88, 70, 0.5);
-  padding: 10px;
-  border-radius: 3px;
-}
-
-/* ------------------------------------------------------------------------------ */
-/*                         Footer                                                 */
-/* ------------------------------------------------------------------------------ */
-
-.footerCard {
-  display: flex;
-  margin-top: 10%;
-  background-color: #1d3628;
-  height: 80px;
-  width: 100%;
-}
-
-.footerText {
-  margin-left: 5%;
-  display: flex;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-
-  letter-spacing: 0.1em;
-
-  color: rgba(228, 224, 217, 0.5);
-}
-
-.footerHelpText {
-  margin-left: 5%;
-  display: flex;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-
-  letter-spacing: 0.1em;
-
-  color: rgba(228, 224, 217, 0.5);
-}
-
-.footerHelpCointiner {
-  display: flex;
-  width: 500px;
-  margin-left: auto;
-  margin-top: 20px;
-}
+    box-sizing: border-box;
+  }
+  
+  .pageBackground {
+    background-color: #e4e0d9;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         Header  navigater                                      */
+  /* ------------------------------------------------------------------------------ */
+  
+  .nav {
+    display: flex;
+    background-color: #1d3628;
+    height: 2%;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 100px;
+  }
+  
+  .logoAvatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 100px;
+    margin-top: 13px;
+    float: right;
+    margin-left: auto;
+  }
+  
+  .search {
+    position: static;
+    margin: 2% 0 1% 1%;
+    width: 200px;
+    height: 30px;
+    background: #e4e0d9;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  
+  .button {
+    height: 30px;
+    width: 30px;
+    margin-top: 2%;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background: #e4e0d9;
+  }
+  
+  .editIcon {
+    float: right;
+    margin: 1%;
+  }
+  
+  .trashIcon {
+    height: 28px;
+    float: right;
+    margin: 2%;
+  }
+  .deleteText {
+    visibility: hidden;
+    margin-top: 1%;
+    padding: 5px 0;
+    float: right;
+    font-size: 10px;
+    color: black;
+    margin-top: 8%;
+  }
+  .trashIcon:hover ~ .deleteText {
+    visibility: visible;
+  }
+  
+  .addIcon {
+    float: right;
+    height: 35px;
+    margin: 2%;
+  }
+  .addText {
+    visibility: hidden;
+    float: right;
+    font-size: 10px;
+    color: black;
+    margin-top: 10%;
+  }
+  .addIcon:hover ~ .addText {
+    visibility: visible;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         Body  container                                     */
+  /* ------------------------------------------------------------------------------ */
+  
+  .container {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    margin-top: 1%;
+    padding: 10px;
+  }
+  
+  .containerRow {
+    height: 480px;
+  }
+  
+  .secounContainerRow {
+    display: flex;
+    height: 100%;
+    margin-top: 3%;
+  }
+  
+  .leftcontainer {
+    width: 80%;
+    margin-right: 1%;
+  }
+  
+  .rightContainer {
+    width: 20%;
+  }
+  
+  .textcontiner {
+    margin: auto;
+    width: 95%;
+  }
+  
+  .tagContiner {
+    display: flex;
+  }
+  
+  .smallContainer {
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         profileCard                                            */
+  /* ------------------------------------------------------------------------------ */
+  
+  .profileCard {
+    height: 480px;
+  
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .profileCardTop {
+    height: 240px;
+    background: rgba(56, 88, 70, 0.5);
+  }
+  
+  .profileCardLogoAvatar {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    margin-left: 40%;
+    margin-top: 100px;
+    background: #e4e0d9;
+    border-radius: 100px;
+  }
+  /* infoText text cointiner */
+  .nameContiner{
+    position: absolute;
+    width: 350px;
+  
+  margin-left: 38%;
+    margin-top: 300px;
+  
+  }
+  
+  .infoText{
+    text-align: center;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 159.4%;
+  }
+  
+  .accountName{
+    text-align: center;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 159.4%;
+  }
+  
+  .profileCardAccountName {
+    position: absolute;
+    margin-left: 61px;
+    margin-top: 303px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .profileCardPositionTitle {
+    position: absolute;
+    margin-left: 61px;
+    margin-top: 341px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .profileCardLocation {
+    position: absolute;
+    margin-left: 61px;
+    margin-top: 412px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .profileCardVetted {
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 344px;
+    margin-right: 7%;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                          Left Card                                             */
+  /* ------------------------------------------------------------------------------ */
+  .leftCard {
+    width: 100%;
+  
+    margin-top: 2%;
+    margin-bottom: 2%;
+  
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .cardHeading {
+    margin-left: 50px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 159.4%;
+  
+    color: #000000;
+  }
+  
+  .aboutMeCardtext {
+    text-indent: 50px;
+    margin-left: 20px;
+    margin-top: 30px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .ratingLable {
+    margin-left: 20px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .tag {
+    width: fit-content;
+    height: 30px;
+    margin: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    background: #c5c5c5;
+    border-radius: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color:white;
+    background-color:#385846;
+    border-color:green; 
+    border:solid
+  
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         Review Card                                          */
+  /* ------------------------------------------------------------------------------ */
+  .reviewCardCointiner {
+    display: flex;
+  }
+  
+  .reviewCard {
+    margin: 3%;
+    width: 270px;
+    height: 240px;
+    background: rgba(56, 88, 70, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+  }
+  
+  .reviewCardTop {
+    display: flex;
+  }
+  
+  .reviewCardAvatar {
+    width: 36px;
+    height: 36px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .reviewCardName {
+    width: 124px;
+    height: 26px;
+    margin-left: 16px;
+    margin-top: 20px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 159.4%;
+  
+    letter-spacing: 0.1em;
+  
+    color: #000000;
+  }
+  
+  .review {
+    text-indent: 50px;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-right: 30px;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 159.4%;
+  
+    color: #000000;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         right Card                                           */
+  /* ------------------------------------------------------------------------------ */
+  
+  .rightCard {
+    margin-top: 8%;
+  
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .rightCardHeading {
+    margin: 3%;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 159.4%;
+  
+    color: #000000;
+  }
+  
+  .rightTag {
+    width: fit-content;
+    block-size: fit-content;
+    height: 30px;
+    margin: 2%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    background: #c5c5c5;
+    border-radius: 20px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: green;
+    background-color: white;
+    border-color: green;
+    border: solid;
+  }
+  
+  .calanderCard {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgba(56, 88, 70, 0.5);
+    padding: 10px;
+    border-radius: 3px;
+  }
+  
+  /* ------------------------------------------------------------------------------ */
+  /*                         Footer                                                 */
+  /* ------------------------------------------------------------------------------ */
+  
+  .footerCard {
+    display: flex;
+    margin-top: 10%;
+    background-color: #1d3628;
+    height: 80px;
+    width: 100%;
+  }
+  
+  .footerText {
+    margin-left: 5%;
+    display: flex;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+  
+    letter-spacing: 0.1em;
+  
+    color: rgba(228, 224, 217, 0.5);
+  }
+  
+  .footerHelpText {
+    margin-left: 5%;
+    display: flex;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+  
+    letter-spacing: 0.1em;
+  
+    color: rgba(228, 224, 217, 0.5);
+  }
+  
+  .footerHelpCointiner {
+    display: flex;
+    width: 500px;
+    margin-left: auto;
+    margin-top: 20px;
+  }
+  
