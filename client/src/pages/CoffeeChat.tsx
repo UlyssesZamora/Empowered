@@ -204,9 +204,7 @@ const calendlyConfig = {
                <button onClick= {handleOpen} className={CoffeeChatStyle.scheduleMeetingButton}>
                Schedule a meeting
                </button>
-              {/* Schedule a Meeting Command */}
-               <Modal isOpen={isOpen} onClose={handleClose}>
-               </Modal>
+              
                </div>
 
               </div>
