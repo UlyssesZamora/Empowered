@@ -129,6 +129,16 @@ const CompanyProfile = () => {
       });
   };
 
+  const handleLogo = () => {
+    /* @ts-expect-error Server Component */
+    if (companyData.companyLogo === null) {
+      return "/images/companyLogo.png";
+    } else {
+      /* @ts-expect-error Server Component */
+      return companyData.companyLogo;
+    }
+  };
+
   useEffect(() => {
     getData(id);
     getAllPros();
@@ -165,11 +175,8 @@ const CompanyProfile = () => {
           <img src="/images/search.png" />
         </button>
 
-        <img
-          className={UserProfileStyle.logoAvatar}
-          src="/images/companyLogo.png"
-        />
-      </nav>
+        <img className={UserProfileStyle.logoAvatar} src={handleLogo()} />
+       </nav>
       {modalOpen && (
         <EditCompanyProfile
           closeModal={setOpenModal}
@@ -226,34 +233,31 @@ const CompanyProfile = () => {
                   >
                     <img
                       className={UserProfileStyle.profileCardLogoAvatar}
-                      /*  @ts-expect-error Server Component */
-                      src={companyData.companyLogo}
-                    />
+                      src={handleLogo()}
+                     />
                   </a>
                 </>
               ) : (
                 <>
                   <img
                     className={UserProfileStyle.profileCardLogoAvatar}
-                    /*  @ts-expect-error Server Component */
-                    src={companyData.companyLogo}
-                  />
+                    src={handleLogo()}
+                   />
                 </>
               )}
 
-              <p className={UserProfileStyle.profileCardAccountName}>
-                {/*  @ts-expect-error Server Component */}
-                {companyData.companyName}
-              </p>
-
-              <p className={UserProfileStyle.profileCardLocation}>
-                {/*  @ts-expect-error Server Component */}
-                {companyData.companyLocation}
-              </p>
-              <p className={UserProfileStyle.profileCardVetted}>
-                Established {year}
-              </p>
-            </div>
+              <div className={UserProfileStyle.nameContiner}>
+                <p className={UserProfileStyle.accountName}>
+                  {/*  @ts-expect-error Server Component */}
+                  {companyData.companyName}
+                </p>
+                <p className={UserProfileStyle.infoText}>
+                  {/*  @ts-expect-error Server Component */}
+                  {companyData.companyLocation}
+                </p>
+                <p className={UserProfileStyle.infoText}>Established {year}</p>
+              </div>
+             </div>
           </div>
         </div>
         <div className={UserProfileStyle.secounContainerRow}>
@@ -368,34 +372,45 @@ const CompanyProfile = () => {
             {/* Departments */}
             <div className={UserProfileStyle.rightCard}>
               {/* adding or deleting the department */}
-              <a
-                href="#"
-                onClick={() => {
-                  setOpenModal(true);
-                  setcompanyInfoEdit("addDepartment");
-                }}
-              >
-                <img
-                  className={UserProfileStyle.addIcon}
-                  src="/images/add.png"
-                />
-                <span className={UserProfileStyle.addText}>add</span>
-              </a>
+              {owner ? (
+                <>
+                  <a
+                    href="#"
+                    onClick={() => {
+                      setOpenModal(true);
+                      setcompanyInfoEdit("addDepartment");
+                    }}
+                  >
+                    <img
+                      className={UserProfileStyle.addIcon}
+                      src="/images/add.png"
+                    />
+                    <span className={UserProfileStyle.addText}>add</span>
+                  </a>
+                </>
+              ) : (
+                <></>
+              )}
 
-              <a
-                href="#"
-                onClick={() => {
-                  setOpenModal(true);
-                  setcompanyInfoEdit("deleteDepartment");
-                }}
-              >
-                <img
-                  className={UserProfileStyle.trashIcon}
-                  src="/images/trash.png"
-                />
-                <span className={UserProfileStyle.deleteText}>delete</span>
-              </a>
-
+              {owner ? (
+                <>
+                  <a
+                    href="#"
+                    onClick={() => {
+                      setOpenModal(true);
+                      setcompanyInfoEdit("deleteDepartment");
+                    }}
+                  >
+                    <img
+                      className={UserProfileStyle.trashIcon}
+                      src="/images/trash.png"
+                    />
+                    <span className={UserProfileStyle.deleteText}>delete</span>
+                  </a>
+                </>
+              ) : (
+                <></>
+              )}
               {/* displaying depatment in the company */}
               <p className={UserProfileStyle.rightCardHeading}>Departments</p>
               <div className={UserProfileStyle.smallContainer}>
