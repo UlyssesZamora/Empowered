@@ -115,6 +115,18 @@ const ProfilePicChange = ({
       });
   };
 
+  const onDeletePhoto = () => {
+    axios 
+    .put("https://goldfish-app-wb78d.ondigitalocean.app/deletePhoto", {userId:userId})
+    .then((res:any) => {
+        console.log(res);
+        window.location.reload();
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+  }
+
   const updateIntro = () => {
     console.log(firstName, lastName, position, company, location);
     axios
@@ -254,7 +266,7 @@ const ProfilePicChange = ({
               </div>
 
               <div style={{ marginLeft: "420px" }}>
-                <a href="#">
+                <a href="#" onClick={onDeletePhoto}>
                   <img
                     style={{ width: "30px", height: "30px" }}
                     src="images/trash.png"

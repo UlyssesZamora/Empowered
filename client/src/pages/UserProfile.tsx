@@ -10,6 +10,7 @@ import axios from "axios";
 import ProfilePicChange from "../components/ProfilePicChange";
 import userIcon from "../assets/user-01-svgrepo-com.svg";
 import jwtDecode from "jwt-decode";
+import Popup from 'reactjs-popup';
 // import NavBar from "../components/NavBar";
 
 let owner: boolean = false;
@@ -27,6 +28,7 @@ const UserProfile = () => {
   const [modalOpen, setOpenModal] = useState(false);
   const [userBio, setUserBio] = useState("");
   const [isFollowing, setIsFollowing] = useState(false);
+  const [testModal, setTestModal] = useState(false);
   const { id } = useParams();
 
   if (localStorage.getItem("jwt") === null) {
@@ -206,6 +208,7 @@ const UserProfile = () => {
           />
         )}
 
+
         {/* body */}
         <div className={UserProfileStyle.container}>
           {/* profile image card */}
@@ -257,6 +260,9 @@ const UserProfile = () => {
                   {userData.userLocation}
                 </p>
 
+                <p className={UserProfileStyle.profileCardVetted} style={{marginTop:'300px'}}>
+                  10 connections
+                </p>
                 <p className={UserProfileStyle.profileCardVetted}>
                   Vetted 2023
                 </p>
@@ -362,14 +368,6 @@ const UserProfile = () => {
 
               {/* My Empowerd 360º */}
               <div className={UserProfileStyle.leftCard}>
-                {owner && (
-                  <>
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
-                    />
-                  </>
-                )}
 
                 <h2 className={UserProfileStyle.cardHeading}>
                   My Empowerd 360º
@@ -617,14 +615,6 @@ const UserProfile = () => {
 
               {/* Vetted score */}
               <div className={UserProfileStyle.leftCard}>
-                {owner && (
-                  <>
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
-                    />
-                  </>
-                )}
 
                 <p className={UserProfileStyle.cardHeading}>Vetted score</p>
 
@@ -732,7 +722,7 @@ const UserProfile = () => {
 
               {/* Vetted Reviews */}
               <div className={UserProfileStyle.leftCard}>
-                {owner && (
+                {!owner && (
                   <>
                     <img
                       className={UserProfileStyle.editIcon}
@@ -772,10 +762,12 @@ const UserProfile = () => {
               <div className={UserProfileStyle.rightCard}>
                 {owner && (
                   <>
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
-                    />
+                    <a href="#" onClick={() => setTestModal(true)}>
+                        <img
+                        className={UserProfileStyle.editIcon}
+                        src="images/edit.png"
+                        />
+                    </a>
                   </>
                 )}
 
