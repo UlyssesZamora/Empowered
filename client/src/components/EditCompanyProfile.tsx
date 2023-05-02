@@ -190,7 +190,7 @@ const EditCompanyProfile = ({
   };
 
   // handling changes in search and add in in modal
-  const handleDepartmentChanges = (departmentId: number) => {
+  const handleDepartmentChanges = () => {
     const selectedDepartment = allDepartment.find(
       (department: any) =>
         department.departmentName.toLowerCase() === newDepartment.toLowerCase()
@@ -237,6 +237,7 @@ const EditCompanyProfile = ({
           console.log(error);
         });
     });
+
     window.location.reload();
   };
 
@@ -419,9 +420,7 @@ const EditCompanyProfile = ({
                     className={a.tag}
                     onClick={() => {
                       onSearch(dept.departmentName);
-                      //adding depatment on clicking the tag
-                      // handleAddDepartment(dept.id, dept.departmentName);
-                      handleDepartmentChanges(dept.id);
+                      handleDepartmentChanges();
                     }}
                   >
                     {dept.departmentName}
