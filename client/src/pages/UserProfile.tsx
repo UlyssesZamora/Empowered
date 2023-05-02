@@ -85,14 +85,17 @@ const UserProfile = () => {
   };
 
   const getFollowerInfo = async () => {
-    axios.get(`https://goldfish-app-wb78d.ondigitalocean.app/getFollowerInfo?followedId=${id}`)
-    .then((res:any) => {
+    axios
+      .get(
+        `https://goldfish-app-wb78d.ondigitalocean.app/getFollowerInfo?followedId=${id}`
+      )
+      .then((res: any) => {
         setUserFollowers(res.data);
-    })
-    .catch((error) => {
-        console.log(error)
-    })
-  }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const getUserValues = async () => {
     axios
@@ -155,7 +158,10 @@ const UserProfile = () => {
   const getFollowing = async () => {
     axios
       .get(
-        "https://goldfish-app-wb78d.ondigitalocean.app/checkFollow?followerId=" + lol.key + "&personWhoGotFollowedId=" + id
+        "https://goldfish-app-wb78d.ondigitalocean.app/checkFollow?followerId=" +
+          lol.key +
+          "&personWhoGotFollowedId=" +
+          id
       )
       .then((res: any) => {
         setIsFollowing(res.data.isFollowing);
@@ -246,7 +252,11 @@ const UserProfile = () => {
                       className={UserProfileStyle.profileCardLogoAvatar}
                       /* @ts-expect-error Server Component */
                       src={userData.userProfilePicture}
-                      style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
                     />
                   </a>
                 ) : (
@@ -257,32 +267,50 @@ const UserProfile = () => {
                   />
                 )}
 
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <p className={UserProfileStyle.profileCardAccountName}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <p className={UserProfileStyle.profileCardAccountName}>
                     {/* @ts-expect-error Server Component */}
                     {userData.userFirstName} {""} {userData.userLastName}
-                    </p>
+                  </p>
 
-                    <p className={UserProfileStyle.profileCardPositionTitle}>
+                  <p className={UserProfileStyle.profileCardPositionTitle}>
                     {/* @ts-expect-error Server Component */}
                     {userData.userCompanyName}
-                    </p>
-                    <p className={UserProfileStyle.profileCardLocation} style={{marginTop:'370px'}}>
+                  </p>
+                  <p
+                    className={UserProfileStyle.profileCardLocation}
+                    style={{ marginTop: "370px" }}
+                  >
                     {/* @ts-expect-error Server Component */}
                     {userData.userLocation}
-                    </p>
-                    <p className={UserProfileStyle.profileCardLocation} style={{marginTop:'400px'}}>
-                        Empowered member since 2023
-                    </p>
+                  </p>
+                  <p
+                    className={UserProfileStyle.profileCardLocation}
+                    style={{ marginTop: "400px" }}
+                  >
+                    Empowered member since 2023
+                  </p>
                 </div>
 
-                <a href="#" onClick={() => {
+                <a
+                  href="#"
+                  onClick={() => {
                     setOpenModal(true);
-                    setUserBio('followerCount')
-                }}>
-                    <p className={UserProfileStyle.profileCardVetted} style={{marginTop:'300px'}}>
+                    setUserBio("followerCount");
+                  }}
+                >
+                  <p
+                    className={UserProfileStyle.profileCardVetted}
+                    style={{ marginTop: "300px" }}
+                  >
                     {userFollowers.length} connections
-                    </p>
+                  </p>
                 </a>
                 {/* <p className={UserProfileStyle.profileCardVetted}>
                   Vetted 2023
@@ -389,7 +417,6 @@ const UserProfile = () => {
 
               {/* My Empowerd 360º */}
               <div className={UserProfileStyle.leftCard}>
-
                 <h2 className={UserProfileStyle.cardHeading}>
                   My Empowerd 360º
                 </h2>
@@ -636,7 +663,6 @@ const UserProfile = () => {
 
               {/* Vetted score */}
               <div className={UserProfileStyle.leftCard}>
-
                 <p className={UserProfileStyle.cardHeading}>Vetted score</p>
 
                 <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -762,7 +788,11 @@ const UserProfile = () => {
                         <div className={UserProfileStyle.reviewCardTop}>
                           <img
                             className={UserProfileStyle.reviewCardAvatar}
-                            src={review.userProfilePicture ? review.userProfilePicture : userIcon}
+                            src={
+                              review.userProfilePicture
+                                ? review.userProfilePicture
+                                : userIcon
+                            }
                           />
                           <p className={UserProfileStyle.reviewCardName}>
                             {review.userFirstName + " " + review.userLastName}
@@ -783,10 +813,10 @@ const UserProfile = () => {
               <div className={UserProfileStyle.rightCard}>
                 {owner && (
                   <>
-                        <img
-                        className={UserProfileStyle.editIcon}
-                        src="images/edit.png"
-                        />
+                    <img
+                      className={UserProfileStyle.editIcon}
+                      src="images/edit.png"
+                    />
                   </>
                 )}
 
@@ -875,15 +905,6 @@ const UserProfile = () => {
 
               {/* Calendar */}
               <div className={UserProfileStyle.rightCard}>
-                {owner && (
-                  <>
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
-                    />
-                  </>
-                )}
-
                 <p className={UserProfileStyle.rightCardHeading}>Calendar</p>
                 <div className={UserProfileStyle.calanderCard}>
                   <Calendar />
