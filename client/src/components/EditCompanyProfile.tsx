@@ -2,7 +2,7 @@ import a from "../styles/companyModal.module.css";
 import { useEffect, useState, useRef, SetStateAction } from "react";
 import InputBox from "./inputBox";
 import axios from "axios";
-import { string } from "prop-types";
+
 
 const EditCompanyProfile = ({
   closeModal,
@@ -141,8 +141,7 @@ const EditCompanyProfile = ({
   const handleDeleteDepartment = () => {
     let newIDList: any = [];
     let oldIDList: any = [];
-    console.log(departmentList);
-    console.log(companyDepartment);
+
     for (let i = 0; i < departmentList.length; i++) {
       newIDList.push(departmentList[i].id);
     }
@@ -150,12 +149,12 @@ const EditCompanyProfile = ({
       oldIDList.push(companyDepartment[i].id);
     }
     let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
-    console.log(deleteID);
+
     companyReview.map((review: any) => {
-      console.log(review);
+
       deleteID.map((deptID: any) => {
         if (review.companydepartmentId === deptID) {
-          console.log(deptID);
+
           axios
             .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`)
             .then((res: any) => {
