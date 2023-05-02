@@ -246,6 +246,7 @@ const UserProfile = () => {
                       className={UserProfileStyle.profileCardLogoAvatar}
                       /* @ts-expect-error Server Component */
                       src={userData.userProfilePicture}
+                      style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                     />
                   </a>
                 ) : (
@@ -256,19 +257,24 @@ const UserProfile = () => {
                   />
                 )}
 
-                <p className={UserProfileStyle.profileCardAccountName}>
-                  {/* @ts-expect-error Server Component */}
-                  {userData.userFirstName} {""} {userData.userLastName}
-                </p>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <p className={UserProfileStyle.profileCardAccountName}>
+                    {/* @ts-expect-error Server Component */}
+                    {userData.userFirstName} {""} {userData.userLastName}
+                    </p>
 
-                <p className={UserProfileStyle.profileCardPositionTitle}>
-                  {/* @ts-expect-error Server Component */}
-                  {userData.userCompanyName}
-                </p>
-                <p className={UserProfileStyle.profileCardLocation}>
-                  {/* @ts-expect-error Server Component */}
-                  {userData.userLocation}
-                </p>
+                    <p className={UserProfileStyle.profileCardPositionTitle}>
+                    {/* @ts-expect-error Server Component */}
+                    {userData.userCompanyName}
+                    </p>
+                    <p className={UserProfileStyle.profileCardLocation} style={{marginTop:'370px'}}>
+                    {/* @ts-expect-error Server Component */}
+                    {userData.userLocation}
+                    </p>
+                    <p className={UserProfileStyle.profileCardLocation} style={{marginTop:'400px'}}>
+                        Empowered member since 2023
+                    </p>
+                </div>
 
                 <a href="#" onClick={() => {
                     setOpenModal(true);
@@ -278,9 +284,9 @@ const UserProfile = () => {
                     {userFollowers.length} connections
                     </p>
                 </a>
-                <p className={UserProfileStyle.profileCardVetted}>
+                {/* <p className={UserProfileStyle.profileCardVetted}>
                   Vetted 2023
-                </p>
+                </p> */}
                 {!owner && (
                   <div className={UserProfileStyle.profileCardVetted}>
                     {isFollowing ? (
