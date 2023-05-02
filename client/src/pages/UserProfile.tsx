@@ -231,15 +231,6 @@ const UserProfile = () => {
           <div className={UserProfileStyle.containerRow}>
             <div className={UserProfileStyle.profileCard}>
               <div className={UserProfileStyle.profileCardTop}>
-                {owner && (
-                  <>
-                    <img
-                      className={UserProfileStyle.editIcon}
-                      src="images/edit.png"
-                    />
-                  </>
-                )}
-
                 {owner ? (
                   <a
                     href="#"
