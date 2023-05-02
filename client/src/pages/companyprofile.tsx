@@ -85,7 +85,9 @@ const CompanyProfile = () => {
   //getting Cons for logged in company
   const getCompanyReviews = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getCompanyReviews/${id}`)
+      .get(
+        `https://goldfish-app-wb78d.ondigitalocean.app/getCompanyReviews/${id}`
+      )
       .then((res: any) => {
         setCompanyReview(res.data);
       })
@@ -97,7 +99,9 @@ const CompanyProfile = () => {
   //getting Department Review for logged in company
   const getDepartmentReviews = async () => {
     axios
-      .get(`https://goldfish-app-wb78d.ondigitalocean.app/getDepartmentReviews/${id}`)
+      .get(
+        `https://goldfish-app-wb78d.ondigitalocean.app/getDepartmentReviews/${id}`
+      )
       .then((res: any) => {
         setDepartmentReview(res.data);
       })
@@ -176,7 +180,7 @@ const CompanyProfile = () => {
         </button>
 
         <img className={UserProfileStyle.logoAvatar} src={handleLogo()} />
-       </nav>
+      </nav>
       {modalOpen && (
         <EditCompanyProfile
           closeModal={setOpenModal}
@@ -234,7 +238,7 @@ const CompanyProfile = () => {
                     <img
                       className={UserProfileStyle.profileCardLogoAvatar}
                       src={handleLogo()}
-                     />
+                    />
                   </a>
                 </>
               ) : (
@@ -242,7 +246,7 @@ const CompanyProfile = () => {
                   <img
                     className={UserProfileStyle.profileCardLogoAvatar}
                     src={handleLogo()}
-                   />
+                  />
                 </>
               )}
 
@@ -257,7 +261,7 @@ const CompanyProfile = () => {
                 </p>
                 <p className={UserProfileStyle.infoText}>Established {year}</p>
               </div>
-             </div>
+            </div>
           </div>
         </div>
         <div className={UserProfileStyle.secounContainerRow}>
@@ -304,10 +308,375 @@ const CompanyProfile = () => {
               <h2 className={UserProfileStyle.cardHeading}>
                 Company 360º Review
               </h2>
-              <h3 className={UserProfileStyle.ratingLable}>Over all</h3>
-              <h3 className={UserProfileStyle.ratingLable}>Attitude</h3>
-              <h3 className={UserProfileStyle.ratingLable}> Work ethics </h3>
-              <h3 className={UserProfileStyle.ratingLable}>Team player</h3>
+              <div className={UserProfileStyle.reviewCardCointiner}>
+                <div style={{ display: "inline" }}>
+                  {/* Over all Company 360º Review*/}
+                  <div style={{ display: "flex" }}>
+                    <h3 className={UserProfileStyle.ratingLable}>Overall</h3>
+
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "153px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background:
+                          "linear-gradient(to right,#385846 50%, #858585 50%)",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <p
+                      style={{
+                        fontFamily: "Montserrat",
+                        fontSize: "16px",
+                        marginTop: "18px",
+                        marginLeft: "15px",
+                      }}
+                    >
+                      4.5
+                    </p>
+                  </div>
+
+                  {/* Work/Life Balance Company 360º Review*/}
+                  <div style={{ display: "flex" }}>
+                    <h3 className={UserProfileStyle.ratingLable}>
+                      Work/Life Balance
+                    </h3>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "48px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <p
+                      style={{
+                        fontFamily: "Montserrat",
+                        fontSize: "16px",
+                        marginTop: "18px",
+                        marginLeft: "15px",
+                      }}
+                    >
+                      5.0
+                    </p>
+                  </div>
+
+                  {/* Comp & Benefits Company 360º Review*/}
+                  <div style={{ display: "flex" }}>
+                    <h3 className={UserProfileStyle.ratingLable}>
+                      Comp & Benefits
+                    </h3>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "60px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#858585",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <p
+                      style={{
+                        fontFamily: "Montserrat",
+                        fontSize: "16px",
+                        marginTop: "18px",
+                        marginLeft: "15px",
+                      }}
+                    >
+                      4.0
+                    </p>
+                  </div>
+
+                  {/* Career Opportunities Company 360º Review*/}
+                  <div style={{ display: "flex" }}>
+                    <h3 className={UserProfileStyle.ratingLable}>
+                      Career Opportunities
+                    </h3>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "15px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background: "#385846",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        height: "20px",
+                        width: "20px",
+                        background:
+                          "linear-gradient(to right,#385846 50%, #858585 50%)",
+                        marginLeft: "5px",
+                        marginTop: "18px",
+                      }}
+                    ></div>
+                    <p
+                      style={{
+                        fontFamily: "Montserrat",
+                        fontSize: "16px",
+                        marginTop: "18px",
+                        marginLeft: "15px",
+                      }}
+                    >
+                      4.5
+                    </p>
+                  </div>
+                </div>
+
+                {/* Professionalism */}
+                <div
+                  style={{
+                    width: "140px",
+                    height: "140px",
+                    borderRadius: "90px",
+                    background: "#385846",
+                    marginLeft: "139px",
+                    marginBottom: "94px",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "39px",
+                      marginTop: "45px",
+                      marginLeft: "40px",
+                      color: "white",
+                    }}
+                  >
+                    5.0
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "16px",
+                      marginTop: "70px",
+                      marginLeft: "5px",
+                    }}
+                  >
+                    Professionalism
+                  </p>
+                </div>
+
+                {/* Job satisfaction */}
+                <div
+                  style={{
+                    width: "140px",
+                    height: "140px",
+                    borderRadius: "50px",
+                    background: "rgba(56, 88, 70, 0.7)",
+                    marginLeft: "139px",
+                    marginBottom: "94px",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "39px",
+                      marginTop: "45px",
+                      marginLeft: "40px",
+                      color: "white",
+                    }}
+                  >
+                    4.0
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "16px",
+                      marginTop: "70px",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    Job satisfaction
+                  </p>
+                </div>
+
+                {/* Employee friendly */}
+                <div
+                  style={{
+                    width: "140px",
+                    height: "140px",
+                    borderRadius: "90px",
+                    background: "#385846",
+                    marginLeft: "139px",
+                    marginBottom: "94px",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "39px",
+                      marginTop: "45px",
+                      marginLeft: "40px",
+                      color: "white",
+                    }}
+                  >
+                    5.0
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontSize: "15px",
+                      marginTop: "70px",
+                      marginLeft: "-5px",
+                    }}
+                  >
+                    Employee friendly
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Reviews*/}
+            <div className={UserProfileStyle.leftCard}>
+              <p className={UserProfileStyle.cardHeading}>Reviews</p>
+              <div className={UserProfileStyle.reviewCardCointiner}>
+                {/* displaying only 4 reviews */}
+                {companyReview.slice(0, 4).map((review) => (
+                  <div className={UserProfileStyle.reviewCard}>
+                    <p key={review.id} className={UserProfileStyle.review}>
+                      {review.reviewDescription}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Reviews*/}
