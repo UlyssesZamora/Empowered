@@ -159,22 +159,20 @@
   position: absolute;
   width: 180px;
   height: 180px;
-  margin-left: 40%;
+  margin-left: 42%;
   margin-top: 100px;
   background: #e4e0d9;
   border-radius: 100px;
 }
 /* infoText text cointiner */
-.nameContiner{
+.nameContiner {
   position: absolute;
   width: 350px;
-
-margin-left: 35%;
+  margin-left: 37%;
   margin-top: 300px;
-
 }
 
-.infoText{
+.infoText {
   text-align: center;
   font-family: "Montserrat";
   font-style: normal;
@@ -183,7 +181,7 @@ margin-left: 35%;
   line-height: 159.4%;
 }
 
-.accountName{
+.accountName {
   text-align: center;
   font-family: "Montserrat";
   font-style: normal;
@@ -326,11 +324,10 @@ margin-left: 35%;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
-  color:white;
-  background-color:#385846;
-  border-color:green; 
-  border:solid
-
+  color: white;
+  background-color: #385846;
+  border-color: green;
+  border: solid;
 }
 
 /* ------------------------------------------------------------------------------ */

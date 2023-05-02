@@ -152,10 +152,10 @@ const EditCompanyProfile = ({
     }
     let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
 
-    companyReview.map((review: any) => {
-      deleteID.map((deptID: any) => {
+    companyReview.map(async (review: any) => {
+      await deleteID.map(async (deptID: any) => {
         if (review.companydepartmentId === deptID) {
-          axios
+          await axios
             .delete(
               `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`
             )
@@ -174,8 +174,8 @@ const EditCompanyProfile = ({
   //deleting department
   const deleteTable = (deleteDepartmentID: any) => {
     console.log(deleteDepartmentID);
-    deleteDepartmentID.map((deptID: any) => {
-      axios
+    deleteDepartmentID.map(async (deptID: any) => {
+      await axios
         .delete(
           `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
         )
@@ -224,21 +224,18 @@ const EditCompanyProfile = ({
 
     let addID = newIDList.filter((word: any) => !oldIDList.includes(word));
 
-    addID.map((deptID: any) => {
-      axios
-        .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
-          departmentId: deptID,
-          companyId: companyId,
-        })
-        .then((res: any) => {
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    });
-
-    window.location.reload();
+    axios
+      .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
+        departmentId: addID,
+        companyId: companyId,
+      })
+      .then((res: any) => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

@@ -6,11 +6,13 @@ let sql = "";
 export const addDepartment: Router = Router();
 
 addDepartment.post("/addDepartment", async (req, res) => {
-  const departmentId = req.body.departmentId;
+  const departmentIds = req.body.departmentId;
   const companyId = req.body.companyId;
-  sql = "INSERT INTO companydepartment (departmentID,companyId )VALUES (?,?)";
+  const values = departmentIds.map((value: any) => [value, companyId]); // adding to list of companyId and departmentID
 
-  pool.query(sql, [departmentId, companyId], async (err, results) => {
+  sql = "INSERT INTO companydepartment (departmentID,companyId )VALUES ?";
+
+  pool.query(sql, [values], async (err, results) => {
     if (err) {
       throw err;
     }
