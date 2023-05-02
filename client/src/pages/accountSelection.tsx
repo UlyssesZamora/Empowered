@@ -20,8 +20,8 @@ const AccountSelection = () => {
 
   return (
     <>
-    {/* @ts-expect-error Server Component */}
-    <NavBar></NavBar>
+      {/* @ts-expect-error Server Component */}
+      <NavBar></NavBar>
       <div className={styles.pageContainer}>
         <div className={styles.midPageContainer}>
           <div className={styles.midPageContainerInner}>

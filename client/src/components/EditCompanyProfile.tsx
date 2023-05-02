@@ -3,7 +3,6 @@ import { useEffect, useState, useRef, SetStateAction } from "react";
 import InputBox from "./inputBox";
 import axios from "axios";
 
-
 const EditCompanyProfile = ({
   closeModal,
   companyLogo,
@@ -44,7 +43,7 @@ const EditCompanyProfile = ({
       reader.onload = () => {
         const imageDataUrl = reader.result;
         axios
-          .put("/api/updateLogo", {
+          .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
             companyId: companyId,
             companyImage: imageDataUrl,
           })
@@ -66,7 +65,7 @@ const EditCompanyProfile = ({
     axios
       .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
-        companyImage: "/image/companyLogo.png",
+        companyImage: "/images/companyLogo.png",
       })
       .then((res: any) => {
         console.log(res);
@@ -115,10 +114,13 @@ const EditCompanyProfile = ({
   //  update New CompanyMission to DB
   const updateNewCompanyMission = () => {
     axios
-      .put("https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyMission", {
-        companyId: companyId,
-        companyMission: updateCompanyMission.current.value,
-      })
+      .put(
+        "https://goldfish-app-wb78d.ondigitalocean.app/updateCompanyMission",
+        {
+          companyId: companyId,
+          companyMission: updateCompanyMission.current.value,
+        }
+      )
       .then((res: any) => {
         console.log(res);
         window.location.reload();
@@ -151,12 +153,12 @@ const EditCompanyProfile = ({
     let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
 
     companyReview.map((review: any) => {
-
       deleteID.map((deptID: any) => {
         if (review.companydepartmentId === deptID) {
-
           axios
-            .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`)
+            .delete(
+              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`
+            )
             .then((res: any) => {
               console.log(res);
             })
@@ -173,9 +175,10 @@ const EditCompanyProfile = ({
   const deleteTable = (deleteDepartmentID: any) => {
     console.log(deleteDepartmentID);
     deleteDepartmentID.map((deptID: any) => {
-
       axios
-        .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`)
+        .delete(
+          `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
+        )
         .then((res: any) => {
           console.log(res);
         })

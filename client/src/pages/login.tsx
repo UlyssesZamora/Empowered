@@ -17,16 +17,22 @@ const LoginPage = () => {
   const submitHandler = () => {
     if (AccountSelected.currentLogin === 0) {
       axios
-        .post("https://goldfish-app-wb78d.ondigitalocean.app/api/login", { user: userName, password })
+        .post("https://goldfish-app-wb78d.ondigitalocean.app/api/login", {
+          user: userName,
+          password,
+        })
         .then((res: any) => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
             axios
-              .get("https://goldfish-app-wb78d.ondigitalocean.app/profileData", {
-                headers: {
-                  authorization: "Bearer: " + localStorage.getItem("jwt"),
-                },
-              })
+              .get(
+                "https://goldfish-app-wb78d.ondigitalocean.app/profileData",
+                {
+                  headers: {
+                    authorization: "Bearer: " + localStorage.getItem("jwt"),
+                  },
+                }
+              )
               .then((res: any) => {
                 const id = res.data[0].id;
                 navigate(`/userprofile/${id}`);
@@ -38,16 +44,22 @@ const LoginPage = () => {
         });
     } else {
       axios
-        .post("https://goldfish-app-wb78d.ondigitalocean.app/api/companylogin", { user: userName, password })
+        .post(
+          "https://goldfish-app-wb78d.ondigitalocean.app/api/companylogin",
+          { user: userName, password }
+        )
         .then((res: any) => {
           if (res.status === 200) {
             localStorage.setItem("jwt", res.data);
             axios
-              .get("https://goldfish-app-wb78d.ondigitalocean.app/companyProfileData", {
-                headers: {
-                  authorization: "Bearer: " + localStorage.getItem("jwt"),
-                },
-              })
+              .get(
+                "https://goldfish-app-wb78d.ondigitalocean.app/companyProfileData",
+                {
+                  headers: {
+                    authorization: "Bearer: " + localStorage.getItem("jwt"),
+                  },
+                }
+              )
               .then((res: any) => {
                 const id = res.data[0].id;
                 navigate(`/companyprofile/${id}`);
@@ -100,9 +112,9 @@ const LoginPage = () => {
 
   return (
     <>
+      {/* @ts-expect-error Server Component */}
+      <NavBar></NavBar>
       <div className={styles.pageContainer}>
-        {/* @ts-expect-error Server Component */}
-        <NavBar></NavBar>
         <div className={styles.midPageContainer}>
           <div className={styles.midPageContainerInner}>
             <div className={styles.topText}>
