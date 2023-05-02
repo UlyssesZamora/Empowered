@@ -679,21 +679,6 @@ const CompanyProfile = () => {
               </div>
             </div>
 
-            {/* Reviews*/}
-            <div className={UserProfileStyle.leftCard}>
-              <p className={UserProfileStyle.cardHeading}>Reviews</p>
-              <div className={UserProfileStyle.reviewCardCointiner}>
-                {/* displaying only 4 reviews */}
-                {companyReview.slice(0, 4).map((review) => (
-                  <div className={UserProfileStyle.reviewCard}>
-                    <p key={review.id} className={UserProfileStyle.review}>
-                      {review.reviewDescription}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Reviews – Department based */}
             <div className={UserProfileStyle.leftCard}>
               <p className={UserProfileStyle.cardHeading}>
