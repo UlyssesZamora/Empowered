@@ -317,7 +317,11 @@ const FilterBy: React.FC<ModalProps> = ({ isOpen2, onClose2, children, onSelectS
             ))}
           </div>
           
-          <button onClick={handleConfirm}>Confirm</button>
+          <div className = {CoffeeChatStyle.smallContainerConfirm}>
+               <button className={CoffeeChatStyle.scheduleMeetingButton} onClick={handleConfirm}>
+               Confirm filters
+               </button>
+          </div>
  
           <div className={styles.content}>{children}</div>
         </div>

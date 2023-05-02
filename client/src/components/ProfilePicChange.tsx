@@ -3,6 +3,7 @@ import styles from "../styles/loginPage.module.css";
 import userProfile from "../styles/UserProfileStyle.module.css";
 import userIcon from "../assets/user-01-svgrepo-com.svg";
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 import { useEffect, useState, useRef, SetStateAction } from "react";
 import { useParams, useLocation, useNavigate, Navigate } from "react-router-dom";
 import InputBox from "./inputBox";
@@ -46,6 +47,7 @@ const ProfilePicChange = ({
   const [value, setValue] = useState("");
   const [interestArr, setInterestArr] = useState(userInterests);
   const [valueArr, setValueArr] = useState(userValues)
+  let lol: any = jwtDecode(localStorage.getItem("jwt")!);
   const navigate = useNavigate();
 
   const handleFirstNameChange = (value: string) => {
@@ -226,6 +228,17 @@ const ProfilePicChange = ({
     })
   };
 
+  const addReview = () => {
+    axios
+    .post("https://goldfish-app-wb78d.ondigitalocean.app/addReview", {bio: textareaRef.current.value, personWhoGotReviewd:userId, reviewerId:lol.key})
+    .then((res:any) => {
+        window.location.reload();
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+  }
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -365,32 +378,7 @@ const ProfilePicChange = ({
                 </div>
               </div>
               <br />
-              <div style={{ marginTop: "-40px" }}>
-                <p style={{ fontFamily: "Montserrat" }}>Pronouns:</p>
-                <select
-                  name="pronouns"
-                  defaultValue=""
-                  style={{
-                    padding: "12px",
-                    borderRadius: "8px",
-                    border: "1px solid #ccc", // Added border
-                    outline: "none",
-                    backgroundColor: "#fff", // Changed background color to white
-                    color: "#333",
-                    fontSize: "16px",
-                    width: "49.7%",
-                    marginTop: "-20px",
-                  }}
-                >
-                  <option disabled value="">
-                    Select Pronouns:
-                  </option>
-                  <option>He/Him</option>
-                  <option>She/Her</option>
-                  <option>They/Them</option>
-                  <option>Other/Prefer Not to Say</option>
-                </select>
-              </div>
+              
               <p style={{ fontFamily: "Montserrat", marginBottom: "0" }}>
                 Current Role
               </p>
@@ -602,6 +590,41 @@ const ProfilePicChange = ({
         </div>
       )}
 
+       {userBio === 'review' && (
+         <div>
+         <div className={a.modalContainer} style={{ height: "550px" }}>
+           <div className={a.titleCloseBtn}>
+             <p style={{ flex: "auto" }}>Vetted Review</p>
+             <button
+               onClick={() => {
+                 closeModal(false);
+               }}
+             >
+               X
+             </button>
+           </div>
+           <div style={{ backgroundColor: "black", height: "1px" }}></div>{" "}
+           <br />
+           <p style={{ fontFamily: "Montserrat" }}>Review for {userFirstName} {userLastName} </p>
+           <textarea
+             style={{ height: "150px", whiteSpace: "pre-wrap" }}
+             ref={textareaRef}
+           ></textarea>
+           <button
+             className={styles.logInBtn}
+             style={{
+               width: "20%",
+               marginLeft: "auto",
+               minWidth: "auto",
+               marginTop: "130px",
+             }}
+             onClick={addReview}
+           >
+             Add Review
+           </button>
+         </div>
+       </div>
+       )}     
       {/* <div className={a.modalContainer}>
             <div className={a.titleCloseBtn}>
               <div style={{marginRight:'400px'}}>

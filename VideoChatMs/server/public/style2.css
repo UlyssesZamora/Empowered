@@ -4,19 +4,29 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* background-color: blue; */
 }
 
 #center{
     margin: 0 auto;
     margin-top: 5%;
+    /* background-color: #f2f2f2; */
     /* margin-bottom: 10%; */
 }
 header, footer {
     height: 80px;
     background-color: #1D3628;
     color: #fff;
+    /* display: flex; */
 /* 			padding: 20px; */
 }
+.headerFlex{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* color:#1D3628; */
+}
+
 #video-grid{
     /* display: flex; */
     display: inline-block;
@@ -82,7 +92,9 @@ video {
     /* top: 0; */
    gap: 15px;
 }
-
+.controls :last-child{
+    margin-left: 100%;
+}
 .main__controls_button:hover {
     background-color: #34383b;
   }
@@ -150,6 +162,35 @@ header{
     letter-spacing: 0.1em;
     color: rgba(228, 224, 217, 0.5);
 }
+
+#headerText {
+    margin-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    color:#1D3628;
+
+}
+
+#sponser{
+    display: flex; 
+    /* background-color: #1D3628; */
+    width: 640px;
+    height: 50px;
+    /* display: inline-block; */
+    /* position: relative; */
+    /* margin: 0 auto; */
+    /* border: 5px solid #333; */
+    align-content: center;
+    justify-content: center;
+    /* top: 0; */
+   gap: 15px;
+}
+
 
 #cameraButton{
     margin-bottom: 50px;

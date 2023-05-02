@@ -42,6 +42,8 @@ import { deleteDepartment } from "./deleteDepartment";
 import { deleteDepartmentReview } from "./deleteDepartmentReview";
 import { deleteProfilePhoto } from "./deleteProfilePhoto";
 import { getFollowerInfo } from "./getFollowerInfo";
+import { AddReview } from "./addReview";
+import { editDepartment } from "./editDepartment";
 
 export const routes: Router = Router();
 
@@ -88,3 +90,4 @@ routes.use(deleteDepartment);
 routes.use(deleteDepartmentReview);
 routes.use(deleteProfilePhoto);
 routes.use(getFollowerInfo);
+routes.use(AddReview);

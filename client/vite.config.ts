@@ -49,6 +49,7 @@ export default defineConfig({
       "/deleteDepartmentReview":"https://goldfish-app-wb78d.ondigitalocean.app/",
       "/deletePhoto": "https://goldfish-app-wb78d.ondigitalocean.app/",
       "/getFollowerInfo": "https://goldfish-app-wb78d.ondigitalocean.app/",
+      "/addReview": "https://goldfish-app-wb78d.ondigitalocean.app/",
     },
   },
   plugins: [react()],

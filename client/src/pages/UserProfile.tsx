@@ -761,11 +761,16 @@ const UserProfile = () => {
               {/* Vetted Reviews */}
               <div className={UserProfileStyle.leftCard}>
                 {!owner && (
-                  <>
+                   <>
+                  <a href="#" onClick={() => {
+                    setOpenModal(true);
+                    setUserBio('review');
+                  }}>
                     <img
                       className={UserProfileStyle.editIcon}
                       src="images/edit.png"
                     />
+                    </a>
                   </>
                 )}
 
@@ -814,8 +819,8 @@ const UserProfile = () => {
                 {/* My links */}
                 <p className={UserProfileStyle.rightCardHeading}>My links</p>
                 <div className={UserProfileStyle.smallContainer}>
-                  <div className={UserProfileStyle.rightTag}>Link</div>
-                  <div className={UserProfileStyle.rightTag}>Link</div>
+                  <div className={UserProfileStyle.rightTag}>Github</div>
+                  <div className={UserProfileStyle.rightTag}>Linkedin</div>
                 </div>
               </div>
 
