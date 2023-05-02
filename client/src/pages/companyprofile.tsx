@@ -122,6 +122,7 @@ const CompanyProfile = () => {
       });
   };
 
+  //getting all department
   const getAllDepartment = async () => {
     axios
       .get("https://goldfish-app-wb78d.ondigitalocean.app/getAllDepartment")
@@ -295,7 +296,7 @@ const CompanyProfile = () => {
                   {companyData.companyMission}
                 </p>
               </div>
-              {/* uncomment if value iare need in Mission card */}
+              {/* uncomment if value are need in Mission card */}
               {/* <div className={UserProfileStyle.tagContiner}>
                 <div className={UserProfileStyle.tag}>Value</div>
                 <div className={UserProfileStyle.tag}>Value</div>

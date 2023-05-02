@@ -1,5 +1,5 @@
 import a from "../styles/companyModal.module.css";
-import { useEffect, useState, useRef, SetStateAction } from "react";
+import { useState, useRef } from "react";
 import InputBox from "./inputBox";
 import axios from "axios";
 
@@ -130,6 +130,7 @@ const EditCompanyProfile = ({
       });
   };
 
+  //handling the list of department deleted
   const handleDelete = (departmentId: number) => {
     setDepartmentList((prevValue: any) => {
       const updatedValues = prevValue.filter(
@@ -143,21 +144,53 @@ const EditCompanyProfile = ({
   const handleDeleteDepartment = () => {
     let newIDList: any = [];
     let oldIDList: any = [];
+    let reviews: any = [];
 
+    //getting deleted id detail
     for (let i = 0; i < departmentList.length; i++) {
       newIDList.push(departmentList[i].id);
     }
     for (let i = 0; i < companyDepartment.length; i++) {
       oldIDList.push(companyDepartment[i].id);
     }
-    let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
 
-    companyReview.map(async (review: any) => {
-      await deleteID.map(async (deptID: any) => {
+    //filtering the deleted id
+    let deleteID = oldIDList.filter((id: any) => !newIDList.includes(id));
+
+    //filtering the for forgin key in department review table and saving the reviewId
+    companyReview.map((review: any) => {
+      deleteID.map((deptID: any) => {
         if (review.companydepartmentId === deptID) {
-          await axios
+          reviews.push(review.id);
+        }
+      });
+    });
+
+    //if no review of that department just delete
+    if (reviews.length === 0) {
+      deleteTable(deleteID);
+    } else {
+      //looping through reviewId and deleting the review with that deptID that selected to delete
+      reviews.map((reviewId: any, i: any, reviews: any) => {
+        // checking if last Last one.
+        if (i + 1 === reviews.length) {
+          axios
             .delete(
-              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${review.id}`
+              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${reviewId}`
+            )
+            .then((res: any) => {
+              // if it is last reviewId redirecting to deleting department
+              console.log(res);
+              deleteTable(deleteID);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          // Not last one.
+          axios
+            .delete(
+              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartmentReview/${reviewId}`
             )
             .then((res: any) => {
               console.log(res);
@@ -167,26 +200,39 @@ const EditCompanyProfile = ({
             });
         }
       });
-    });
-    deleteTable(deleteID);
+    }
   };
 
   //deleting department
   const deleteTable = (deleteDepartmentID: any) => {
-    console.log(deleteDepartmentID);
-    deleteDepartmentID.map(async (deptID: any) => {
-      await axios
-        .delete(
-          `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
-        )
-        .then((res: any) => {
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    // looping through list of deleted department
+    deleteDepartmentID.map((deptID: any, i: any, deleteDepartmentID: any) => {
+      //checking for last DepartmentID in loop to relode the window
+      if (i + 1 === deleteDepartmentID.length) {
+        axios
+          .delete(
+            `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
+          )
+          .then((res: any) => {
+            console.log(res);
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        axios
+          .delete(
+            `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
+          )
+          .then((res: any) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     });
-    window.location.reload();
   };
 
   // handling changes in search and add in in modal
@@ -215,6 +261,7 @@ const EditCompanyProfile = ({
     let newIDList: any = [];
     let oldIDList: any = [];
 
+    //collecting newly added department
     for (let i = 0; i < departmentList.length; i++) {
       newIDList.push(departmentList[i].departmentId);
     }
@@ -222,8 +269,9 @@ const EditCompanyProfile = ({
       oldIDList.push(companyDepartment[i].departmentId);
     }
 
-    let addID = newIDList.filter((word: any) => !oldIDList.includes(word));
+    let addID = newIDList.filter((id: any) => !oldIDList.includes(id));
 
+    //sending list of new department to add
     axios
       .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
         departmentId: addID,
