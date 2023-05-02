@@ -90,3 +90,4 @@ routes.use(deleteDepartment);
 routes.use(deleteDepartmentReview);
 routes.use(deleteProfilePhoto);
 routes.use(getFollowerInfo);
+routes.use(AddReview);
