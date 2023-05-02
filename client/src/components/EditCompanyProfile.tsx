@@ -66,7 +66,7 @@ const EditCompanyProfile = ({
     axios
       .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
-        companyImage: "/images/companyLogo.png",
+        companyImage: "../src/assets/companyLogo.png",
       })
       .then((res: any) => {
         console.log(res);
@@ -128,23 +128,6 @@ const EditCompanyProfile = ({
       });
   };
 
-  //adding depatment on clicking tag
-  const handleAddDepartment = (
-    departmentId: number,
-    departmentName: string
-  ) => {
-    console.log("add to database selectedDepartment");
-    const newdept = {
-      id: departmentId,
-      departmentName: departmentName,
-    };
-    setDepartmentList((prevValues: any) => {
-      return [...prevValues, newdept];
-    });
-
-    setNewDepartment("");
-  };
-
   const handleDelete = (departmentId: number) => {
     setDepartmentList((prevValue: any) => {
       const updatedValues = prevValue.filter(
@@ -158,7 +141,8 @@ const EditCompanyProfile = ({
   const handleDeleteDepartment = () => {
     let newIDList: any = [];
     let oldIDList: any = [];
-
+    console.log(departmentList);
+    console.log(companyDepartment);
     for (let i = 0; i < departmentList.length; i++) {
       newIDList.push(departmentList[i].id);
     }
@@ -166,7 +150,7 @@ const EditCompanyProfile = ({
       oldIDList.push(companyDepartment[i].id);
     }
     let deleteID = oldIDList.filter((word: any) => !newIDList.includes(word));
-
+    console.log(deleteID);
     companyReview.map((review: any) => {
       console.log(review);
       deleteID.map((deptID: any) => {
@@ -188,18 +172,19 @@ const EditCompanyProfile = ({
 
   //deleting department
   const deleteTable = (deleteDepartmentID: any) => {
+    console.log(deleteDepartmentID);
     deleteDepartmentID.map((deptID: any) => {
-      // console.log(deptID);
+
       axios
         .delete(`https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`)
         .then((res: any) => {
           console.log(res);
-          window.location.reload();
         })
         .catch((error) => {
           console.log(error);
         });
     });
+    window.location.reload();
   };
 
   // handling changes in search and add in in modal
@@ -211,7 +196,7 @@ const EditCompanyProfile = ({
 
     if (selectedDepartment) {
       const newDept = {
-        departmentId: departmentId,
+        departmentId: selectedDepartment.id,
         companyId: companyId,
         departmentName: selectedDepartment.departmentName,
       };
@@ -225,18 +210,32 @@ const EditCompanyProfile = ({
 
   //adding newdepartment  to DB
   const handleAdd = () => {
-    axios
-      .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
-        newDepartmentList: departmentList,
-        oldDepartmentList: companyDepartment,
-      })
-      .then((res: any) => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    let newIDList: any = [];
+    let oldIDList: any = [];
+
+    for (let i = 0; i < departmentList.length; i++) {
+      newIDList.push(departmentList[i].departmentId);
+    }
+    for (let i = 0; i < companyDepartment.length; i++) {
+      oldIDList.push(companyDepartment[i].departmentId);
+    }
+
+    let addID = newIDList.filter((word: any) => !oldIDList.includes(word));
+
+    addID.map((deptID: any) => {
+      axios
+        .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
+          departmentId: deptID,
+          companyId: companyId,
+        })
+        .then((res: any) => {
+          console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+    window.location.reload();
   };
 
   return (

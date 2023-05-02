@@ -15,9 +15,9 @@ INSERT INTO empowerd.community ( createdBy,communityName,communityCreatedDate,me
 INSERT INTO empowerd.company(
 companyName, companyEmail, companyPassword, companyRegisteredDate, companyLastLogin, companyLocation, companyMission, companyWorkModel,companyLogo
 )VALUES
-('companyName1', 'companyEmail1@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '2020-01-01', '2023-04-14', 'San Jose', 'Since they became a popular way for businesses to describe themselves in the 1980s, mission statements have advanced significantly. Today, these statements of purpose are also compared to a mantra for achieving professional success and are found throughout all of an organizations most important resources, from advertising and promotional materials to its corporate website. ', 'hybrid',NULL), 
-('companyName2', 'companyEmail2@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '2000-02-08', '2023-04-14' , 'Sunnyvale', 'A mission statement encapsulates the goal of your business in one sentence or paragraph. It can appear simple to come up with anything so brief because it is, but in actuality, the more room you have to define something, the harder it can be.', 'remote',NULL), 
-('companyName3', 'companyEmail3@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '1993-02-12' , '2023-04-14', 'Denver', 'Our goal is to maintain and enhance the unique connections you work so hard to create as an entrepreneur. No matter how much or little experience you have, we think a firm delineation of these connections through contracts establishes a reliable foundation. To provide people with the tools and business systems they require so they can stop putting their lives in danger in order to run a business.', 'hybrid',NULL);
+('Fizz pop', 'companyEmail1@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '2020-01-01', '2023-04-14', 'Son Jase', 'Since they became a popular way for businesses to describe themselves in the 1980s, mission statements have advanced significantly. Today, these statements of purpose are also compared to a mantra for achieving professional success and are found throughout all of an organizations most important resources, from advertising and promotional materials to its corporate website. ', 'hybrid',NULL), 
+('Pear', 'companyEmail2@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '2000-02-08', '2023-04-14' , 'funnyvale', 'A mission statement encapsulates the goal of your business in one sentence or paragraph. It can appear simple to come up with anything so brief because it is, but in actuality, the more room you have to define something, the harder it can be.', 'remote',NULL), 
+('Silverman Sachs', 'companyEmail3@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', '1993-02-12' , '2023-04-14', 'Denver', 'Our goal is to maintain and enhance the unique connections you work so hard to create as an entrepreneur. No matter how much or little experience you have, we think a firm delineation of these connections through contracts establishes a reliable foundation. To provide people with the tools and business systems they require so they can stop putting their lives in danger in order to run a business.', 'hybrid',NULL);
 
 -- -----------------------------------------------------
 -- Userinfo
@@ -28,9 +28,9 @@ INSERT INTO empowerd.userinfo (
   userFirstName, userLastName, userDateOfBirth, userEmail,userPassword,userProfilePicture, userReferral, userRegisteredDate, userLastLogin, userCompanyName,
 salary, userActive
 )VALUES
-('Foo1', 'Boo1','2000-04-14', 'userEmail1@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a',NULL,1,'2023-04-14', '2023-04-14', 'companyName1',100000,1),
-('Foo2', 'Boo2','1999-02-04', 'userEmail2@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', Null,2,'2023-04-14', '2023-04-14', 'companyName2',200000,1),
-('Foo3', 'Boo3','2007-07-24', 'userEmail3@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a',Null, 3,'2023-04-14', '2023-04-14', 'companyName3',300000,1);
+('Ada', 'Monroe','2000-04-14', 'userEmail1@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a',NULL,1,'2023-04-14', '2023-04-14', 'Fizz pop',100000,1),
+('Eliza', 'Bennet','1999-02-04', 'userEmail2@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a', Null,2,'2023-04-14', '2023-04-14', 'Monda',200000,1),
+('Edward', 'James','2007-07-24', 'userEmail3@tester.com', '$2a$12$OVZhQAx2OgN36hMizz46Z.OdHvtNjgTa9h6ytpI.Rbp35WX8Trz8a',Null, 3,'2023-04-14', '2023-04-14', 'Singer pad',300000,1);
 
 -- -----------------------------------------------------
 -- userExternal
@@ -193,6 +193,6 @@ INSERT INTO empowerd.departmentreview(
 companydepartmentId, reviewOfCompany, reviewer, reviewDescription
 )VALUES
 (1,1,1,'Best department I’ve worked at!'), (2,1,2,'Department culture is perfect.just started this role so do not know exactly how good it is but the application was fairly easy and was offered tests straight away. Do not think you can make a lot though.'), (3,1,3,'Managers are the best in this department'),
-(1,1,1,'Best department I’ve worked at!'), (2,1,2,'Department culture is perfect.just started this role so do not know exactly how good it is but the application was fairly easy and was offered tests straight away. Do not think you can make a lot though.'), (3,1,3,'Managers are the best in this department'),
-(1,2,1,'Best department I’ve worked at!'), (2,2,2,'Department culture is perfect'), (3,2,3,'Managers are the best in this department'),
-(1,3,1,'Best department I’ve worked at!'), (2,3,2,'Department culture is perfect'), (3,3,3,'Managers are the best in this department');
+(1,1,1,'Best department I’ve worked at!'), (3,1,2,'Department culture is perfect.just started this role so do not know exactly how good it is but the application was fairly easy and was offered tests straight away. Do not think you can make a lot though.'), (2,1,3,'Managers are the best in this department'),
+(4,2,1,'Best department I’ve worked at!'), (5,2,2,'Department culture is perfect'), (6,2,3,'Managers are the best in this department'),
+(7,3,1,'Best department I’ve worked at!'), (8,3,2,'Department culture is perfect'), (9,3,3,'Managers are the best in this department');
