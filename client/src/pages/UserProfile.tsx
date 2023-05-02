@@ -761,11 +761,16 @@ const UserProfile = () => {
               {/* Vetted Reviews */}
               <div className={UserProfileStyle.leftCard}>
                 {!owner && (
-                  <>
+                   <>
+                  <a href="#" onClick={() => {
+                    setOpenModal(true);
+                    setUserBio('review');
+                  }}>
                     <img
                       className={UserProfileStyle.editIcon}
                       src="images/edit.png"
                     />
+                    </a>
                   </>
                 )}
 
