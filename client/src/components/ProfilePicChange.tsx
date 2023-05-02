@@ -230,7 +230,7 @@ const ProfilePicChange = ({
 
   const addReview = () => {
     axios
-    .post("https://goldfish-app-wb78d.ondigitalocean.app/addReview", {userBio: textareaRef.current.value, personWhoGotReviewd:userId, reviewerId:lol.key})
+    .post("https://goldfish-app-wb78d.ondigitalocean.app/addReview", {bio: textareaRef.current.value, personWhoGotReviewd:userId, reviewerId:lol.key})
     .then((res:any) => {
         window.location.reload();
     })
