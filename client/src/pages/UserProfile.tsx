@@ -819,8 +819,8 @@ const UserProfile = () => {
                 {/* My links */}
                 <p className={UserProfileStyle.rightCardHeading}>My links</p>
                 <div className={UserProfileStyle.smallContainer}>
-                  <div className={UserProfileStyle.rightTag}>Link</div>
-                  <div className={UserProfileStyle.rightTag}>Link</div>
+                  <div className={UserProfileStyle.rightTag}>Github</div>
+                  <div className={UserProfileStyle.rightTag}>Linkedin</div>
                 </div>
               </div>
 
