@@ -584,6 +584,13 @@
   /*                         right Card                                           */
   /* ------------------------------------------------------------------------------ */
   
+  .smallContainerConfirm {
+    margin-top: 20px;
+    display:flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
   .rightCard {
     margin-top: 0px;
     width: 100%;
