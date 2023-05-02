@@ -9,7 +9,7 @@ getDepartment.get("/getDepartment/:id", async (req, res) => {
   const id = req.params.id;
 
   sql =
-    "SELECT *\
+    "SELECT cd.id,cd.departmentID,cd.companyid,d.departmentName\
     FROM companydepartment cd\
     INNER JOIN department d on cd.departmentID=d.id\
     WHERE cd.companyId =?";

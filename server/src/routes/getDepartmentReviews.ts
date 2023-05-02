@@ -9,7 +9,7 @@ getDepartmentReviews.get("/getDepartmentReviews/:id", async (req, res) => {
   const id = req.params.id;
 
   sql =
-    "SELECT dr.reviewDescription,dr.reviewOfCompany,dr.companydepartmentId,\
+    "SELECT dr.id,dr.reviewDescription,dr.reviewOfCompany,dr.companydepartmentId,\
         (SELECT  departmentName As departmentName\
         FROM    department \
         WHERE  department.id = cd.departmentID\

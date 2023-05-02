@@ -66,7 +66,7 @@ const EditCompanyProfile = ({
     axios
       .put("https://goldfish-app-wb78d.ondigitalocean.app/api/updateLogo", {
         companyId: companyId,
-        companyImage: "../src/assets/companyLogo.png",
+        companyImage: "/image/companyLogo.png",
       })
       .then((res: any) => {
         console.log(res);
