@@ -628,40 +628,6 @@ const CompanyProfile = () => {
                     Job satisfaction
                   </p>
                 </div>
-
-                {/* Employee friendly */}
-                <div
-                  style={{
-                    width: "140px",
-                    height: "140px",
-                    borderRadius: "90px",
-                    background: "#385846",
-                    marginLeft: "139px",
-                    marginBottom: "94px",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontFamily: "Montserrat",
-                      fontSize: "39px",
-                      marginTop: "45px",
-                      marginLeft: "40px",
-                      color: "white",
-                    }}
-                  >
-                    5.0
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "Montserrat",
-                      fontSize: "15px",
-                      marginTop: "70px",
-                      marginLeft: "-5px",
-                    }}
-                  >
-                    Employee friendly
-                  </p>
-                </div>
               </div>
             </div>
 
