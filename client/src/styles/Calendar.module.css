@@ -1,0 +1,45 @@
+.calendarContainer {
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    width: 290px;
+    height: 350px;
+    border-radius: 10px;
+    
+    
+}
+
+.calendar {
+    padding-top: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 24px;
+    
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 290px;
+    height: 420px;
+    border-radius: 10px;
+
+}
+.connectToCalendlyButton{
+    width: 204px;
+    height: 30px;
+    left: 43px;
+    bottom: 20px;
+    background: #385846;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+
+}
