@@ -205,34 +205,38 @@ const EditCompanyProfile = ({
 
   //deleting department
   const deleteTable = (deleteDepartmentID: any) => {
-    // looping through list of deleted department
-    deleteDepartmentID.map((deptID: any, i: any, deleteDepartmentID: any) => {
-      //checking for last DepartmentID in loop to relode the window
-      if (i + 1 === deleteDepartmentID.length) {
-        axios
-          .delete(
-            `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
-          )
-          .then((res: any) => {
-            console.log(res);
-            window.location.reload();
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      } else {
-        axios
-          .delete(
-            `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
-          )
-          .then((res: any) => {
-            console.log(res);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    });
+    if (deleteDepartmentID.length === 0) {
+      window.location.reload();
+    } else {
+      // looping through list of deleted department
+      deleteDepartmentID.map((deptID: any, i: any, deleteDepartmentID: any) => {
+        //checking for last DepartmentID in loop to relode the window
+        if (i + 1 === deleteDepartmentID.length) {
+          axios
+            .delete(
+              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
+            )
+            .then((res: any) => {
+              console.log(res);
+              window.location.reload();
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          axios
+            .delete(
+              `https://goldfish-app-wb78d.ondigitalocean.app/deleteDepartment/${deptID}`
+            )
+            .then((res: any) => {
+              console.log(res);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      });
+    }
   };
 
   // handling changes in search and add in in modal
@@ -270,20 +274,23 @@ const EditCompanyProfile = ({
     }
 
     let addID = newIDList.filter((id: any) => !oldIDList.includes(id));
-
-    //sending list of new department to add
-    axios
-      .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
-        departmentId: addID,
-        companyId: companyId,
-      })
-      .then((res: any) => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (addID.length === 0) {
+      window.location.reload();
+    } else {
+      //sending list of new department to add
+      axios
+        .post("https://goldfish-app-wb78d.ondigitalocean.app/addDepartment", {
+          departmentId: addID,
+          companyId: companyId,
+        })
+        .then((res: any) => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   return (
