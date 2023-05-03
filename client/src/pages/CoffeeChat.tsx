@@ -4,6 +4,8 @@ import Modal from "../components/Modal";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import FilterBy from "../components/FilterBy";
+import Calendar from "../components/Calendar";
+import styles from "../styles/Calendar.module.css";
 
 const CoffeeChat = () => {
 
@@ -476,7 +478,18 @@ const calendlyConfig = {
               </div>            
 
             </div>
+            {/* CALENDAR START */}
+            <div className={styles.calendarContainer}>
+              <div className={styles.calendar}>
+            <Calendar />
+              </div>
 
+              <div className={styles.buttonContainer}>
+              <button className={styles.connectToCalendlyButton}>Connect to calendly</button>
+              </div>
+
+            </div>
+            {/* CALENDAR END  */}
 
           </div>
         </div>
