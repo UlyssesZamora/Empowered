@@ -156,10 +156,10 @@
 }
 
 .profileCardLogoAvatar {
-  position: absolute;
+  /* position: absolute; */
   width: 180px;
   height: 180px;
-  margin-left: 42%;
+  /* margin-left: 42%; */
   margin-top: 100px;
   background: #e4e0d9;
   border-radius: 100px;
@@ -192,7 +192,7 @@
 
 .profileCardAccountName {
   position: absolute;
-  margin-left: 61px;
+  /* margin-left: 61px; */
   margin-top: 303px;
 
   font-family: "Montserrat";
@@ -208,7 +208,7 @@
 
 .profileCardPositionTitle {
   position: absolute;
-  margin-left: 61px;
+  /* margin-left: 61px; */
   margin-top: 341px;
 
   font-family: "Montserrat";
@@ -224,7 +224,7 @@
 
 .profileCardLocation {
   position: absolute;
-  margin-left: 61px;
+  /* margin-left: 61px; */
   margin-top: 412px;
 
   font-family: "Montserrat";

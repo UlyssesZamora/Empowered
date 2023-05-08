@@ -231,6 +231,13 @@ const UserProfile = () => {
           <div className={UserProfileStyle.containerRow}>
             <div className={UserProfileStyle.profileCard}>
               <div className={UserProfileStyle.profileCardTop}>
+              <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
                 {owner ? (
                   <a
                     href="#"
@@ -243,11 +250,6 @@ const UserProfile = () => {
                       className={UserProfileStyle.profileCardLogoAvatar}
                       /* @ts-expect-error Server Component */
                       src={userData.userProfilePicture}
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                      }}
                     />
                   </a>
                 ) : (
@@ -258,13 +260,7 @@ const UserProfile = () => {
                   />
                 )}
 
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
+               
                   <p className={UserProfileStyle.profileCardAccountName}>
                     {/* @ts-expect-error Server Component */}
                     {userData.userFirstName} {""} {userData.userLastName}
@@ -298,7 +294,7 @@ const UserProfile = () => {
                 >
                   <p
                     className={UserProfileStyle.profileCardVetted}
-                    style={{ marginTop: "300px" }}
+                    style={{ marginTop: "30px" }}
                   >
                     {userFollowers.length} connections
                   </p>
@@ -311,7 +307,7 @@ const UserProfile = () => {
                     {isFollowing ? (
                       <button
                         className={styles.logInBtn}
-                        style={{ marginTop: "50px", minWidth: "150px" }}
+                        style={{ position:'absolute', marginTop: "-236px", minWidth: "150px" }}
                         onClick={() => submitConRequest()}
                       >
                         Unfollow?
@@ -320,7 +316,7 @@ const UserProfile = () => {
                       <div>
                         <button
                           className={styles.logInBtn}
-                          style={{ marginTop: "50px", minWidth: "150px" }}
+                          style={{ position:'absolute', marginTop: "-236px", minWidth: "150px" }}
                           onClick={() => submitConRequest()}
                         >
                           Follow?
