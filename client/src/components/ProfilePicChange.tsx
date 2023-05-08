@@ -463,13 +463,15 @@ const ProfilePicChange = ({
                         <input style={{width:'100%', height:'30px'}} type='text' value={value} onChange={onChangeValue}></input>
                     </div>
                     
-                    <div className="dropdown" style={{display:'flex', flexWrap:'wrap'}}>
+                    <div className="dropdown" style={{height:'120px',display:'flex', flexWrap:'wrap', overflow:'auto'}}>
                         {interestList
+                        .slice()
+                        .sort(() => Math.random() - 0.5)
                         .filter((interest:any) => {
                             const searchTerm = value.toLowerCase()
                             const interestName = interest.interest.toLowerCase();
                             const isSelected = interestArr.some((userInterest:any) => userInterest.id === interest.id)
-                            return searchTerm && interestName.startsWith(searchTerm) && !isSelected
+                            return (searchTerm ? interestName.startsWith(searchTerm) : true) && !isSelected;
                         })
                         .map((interest:any) => (
                             <div className={userProfile.tag} style={{cursor:'pointer'}} onClick={() => {onSearch(interest.interest); handleAddInterest();}}>
@@ -522,13 +524,15 @@ const ProfilePicChange = ({
                         <input style={{width:'100%', height:'30px'}} type='text' value={value} onChange={onChangeValue}></input>
                     </div>
                     
-                    <div className="dropdown" style={{display:'flex', flexWrap:'wrap'}}>
+                    <div className="dropdown" style={{overflow:'auto', height:'120px', display:'flex', flexWrap:'wrap'}}>
                         {valueList
+                        .slice()
+                        .sort(() => Math.random() - 0.5)
                         .filter((values:any) => {
                             const searchTerm = value.toLowerCase()
                             const valueName = values.valueList.toLowerCase();
                             const isSelected = valueArr.some((userValue:any) => userValue.id === values.id)
-                            return searchTerm && valueName.startsWith(searchTerm) && !isSelected
+                            return (searchTerm ? valueName.startsWith(searchTerm) : true) && !isSelected;
                         })
                         .map((values:any) => (
                             <div className={userProfile.tag} style={{cursor:'pointer'}} onClick={() => {onSearch(values.valueList); handleAddValue();}}>
