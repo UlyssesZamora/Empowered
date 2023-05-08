@@ -156,14 +156,22 @@
 }
 
 .profileCardLogoAvatar {
-  /* position: absolute; */
+  position: absolute;
   width: 180px;
   height: 180px;
-  /* margin-left: 42%; */
+  margin-left: 42%;
   margin-top: 100px;
   background: #e4e0d9;
   border-radius: 100px;
 }
+
+.profilePicUP {
+    width: 180px;
+    height: 180px;
+    margin-top: 100px;
+    background: #e4e0d9;
+    border-radius: 100px;
+  }
 /* infoText text cointiner */
 .nameContiner {
   position: absolute;

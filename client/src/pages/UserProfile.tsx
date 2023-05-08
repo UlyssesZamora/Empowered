@@ -254,7 +254,7 @@ const UserProfile = () => {
                   </a>
                 ) : (
                   <img
-                    className={UserProfileStyle.profileCardLogoAvatar}
+                    className={UserProfileStyle.profilePicUP}
                     /* @ts-expect-error Server Component */
                     src={userData.userProfilePicture}
                   />
