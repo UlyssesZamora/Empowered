@@ -44,9 +44,6 @@ const NavBar = () => {
   } else if (pwd === "/loginpage") {
     /* LOGIN PAGE */
     return (
-      // <nav className={NavBarStyle.loginNav}>
-
-      // </nav>
       <nav className={NavBarStyle.nav}>
         <a href="/">
           <img
@@ -55,7 +52,7 @@ const NavBar = () => {
             className={NavBarStyle.logo}
           />
         </a>
-        <button onClick={() => {}} className={NavBarStyle.button}>
+        <button onClick={() => {}} className={NavBarStyle.waitlistbutton}>
           {" "}
           Join the Waitlist
         </button>
@@ -79,7 +76,7 @@ const NavBar = () => {
         </div>
         <button
           onClick={() => navigate("/coffeechat")}
-          className={NavBarStyle.button}
+          className={NavBarStyle.userProfilebutton}
         >
           Chai Now
         </button>
@@ -124,7 +121,7 @@ const NavBar = () => {
         </div>
         <button
           onClick={() => navigate("/coffeechat")}
-          className={NavBarStyle.button}
+          className={NavBarStyle.userProfilebutton}
         >
           Chai Now
         </button>
@@ -160,7 +157,7 @@ const NavBar = () => {
           </div>
         </div>
         <button
-          className={NavBarStyle.button}
+          className={NavBarStyle.coffeechatbutton}
           onClick={() => whereTo("Profile")}
         >
           Profile

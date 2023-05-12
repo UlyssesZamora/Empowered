@@ -114,10 +114,28 @@
 .waitlistbutton {
   margin-left: auto;
   height: 30px;
-  width: 30px;
+  width: 180px;
   margin-top: 2%;
   margin-right: 2%;
   background: #e4e0d9;
+}
+
+.userProfilebutton{
+  margin-left: auto;
+  height: 30px;
+  width: 90px;
+  margin-top: 0.5%;
+  margin-right: 2%;
+  background: #e4d0d9;
+}
+
+.coffeechatbutton {
+  margin-left: auto;
+  height: 30px;
+  width: 90px;
+  margin-top: 0.5%;
+  margin-right: 2%;
+  background: #e4d0d9;
 }
 
 .editIcon {
