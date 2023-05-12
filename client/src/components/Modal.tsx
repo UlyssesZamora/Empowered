@@ -131,22 +131,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
               <div className ={styles.modalSmallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                9:00-9:30
                 </div>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                9:30-10:00
                 </div>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                10:00-10:30
                 </div>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                10:30-11:00
                 </div>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                11:00-11:30
                 </div>
                 <div className = {CoffeeChatStyle.connectionCardTimeSlotsTag}>
-                9:30-10:30
+                11:30-12:00
                 </div>
         
               </div>
