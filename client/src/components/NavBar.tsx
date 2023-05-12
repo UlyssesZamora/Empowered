@@ -35,7 +35,7 @@ const NavBar = () => {
             className={NavBarStyle.logo}
           />
         </a>
-        <button onClick={() => {}} className={NavBarStyle.button}>
+        <button onClick={() => {}} className={NavBarStyle.waitlistbutton}>
           {" "}
           Join the Waitlist
         </button>

@@ -111,6 +111,14 @@
   border-top-right-radius: 8px;
   background: #e4e0d9;
 }
+.waitlistbutton {
+  margin-left: auto;
+  height: 30px;
+  width: 30px;
+  margin-top: 2%;
+  margin-right: 2%;
+  background: #e4e0d9;
+}
 
 .editIcon {
   float: right;
