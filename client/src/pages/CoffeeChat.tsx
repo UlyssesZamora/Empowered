@@ -127,30 +127,30 @@ const calendlyConfig = {
                 </div>
                 <div>
                   <p className={CoffeeChatStyle.connectionCardName}>
-                    Profile Name
+                    Nichole Anderson
                   </p>
                   <p className={CoffeeChatStyle.connectionCardJobTitle}>
-                    job title
+                    Software Engineer
                   </p>
                 </div>
 
                 {/* Featured Skills */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
+                <div className={CoffeeChatStyle.connectionTag}>Cloud Computing</div>
+                <div className={CoffeeChatStyle.connectionTag}>React</div>
+                <div className={CoffeeChatStyle.connectionTag}>SQL</div>
+                <div className={CoffeeChatStyle.connectionTag}>Java</div>
 
                </div>
 
                 {/* Common Interests */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Common Interests</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
+                <div className={CoffeeChatStyle.connectionTag}>Art</div>
+                <div className={CoffeeChatStyle.connectionTag}>Baking</div>
+                <div className={CoffeeChatStyle.connectionTag}>Fishing</div>
+                <div className={CoffeeChatStyle.connectionTag}>Movies</div>
                </div>
 
                 {/* Upcoming Availability */}
@@ -168,30 +168,30 @@ const calendlyConfig = {
                  {/* Availability 1 */}
                 <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  9
+                  11
                  </div>                
                 </div>
 
                  {/* Availability 2 */}
                  <div className={CoffeeChatStyle.connectionDateMiddleTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  10
+                  12
                  </div>                
                 </div>
 
                   {/* Availability 3 */}
                   <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  11
+                  13
                  </div>                
                 </div>
 
@@ -223,28 +223,29 @@ const calendlyConfig = {
                 </div>
                 <div>
                   <p className={CoffeeChatStyle.connectionCardName}>
-                    Profile Name
+                    Deborah Katzer
                   </p>
                   <p className={CoffeeChatStyle.connectionCardJobTitle}>
-                    job title
+                    Chief Financial Officer
                   </p>
                 </div>
 
                 {/* Featured Skills */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
+                <div className={CoffeeChatStyle.connectionTag}>Finance</div>
+                <div className={CoffeeChatStyle.connectionTag}>Mentoring</div>
+                <div className={CoffeeChatStyle.connectionTag}>Research</div>
+                <div className={CoffeeChatStyle.connectionTag}>Leadership</div>
                </div>
 
                 {/* Common Interests */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Common Interests</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
+                <div className={CoffeeChatStyle.connectionTag}>Golf</div>
+                <div className={CoffeeChatStyle.connectionTag}>Music</div>
+                <div className={CoffeeChatStyle.connectionTag}>Tea</div>
+                <div className={CoffeeChatStyle.connectionTag}>Vegan</div>
                </div>
 
                 {/* Upcoming Availability */}
@@ -262,30 +263,30 @@ const calendlyConfig = {
                  {/* Availability 1 */}
                 <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  9
+                  11
                  </div>                
                 </div>
 
                  {/* Availability 2 */}
                  <div className={CoffeeChatStyle.connectionDateMiddleTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  10
+                  12
                  </div>                
                 </div>
 
                   {/* Availability 3 */}
                   <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  11
+                  13
                  </div>                
                 </div>
 
@@ -317,29 +318,29 @@ const calendlyConfig = {
                 </div>
                 <div>
                   <p className={CoffeeChatStyle.connectionCardName}>
-                    Profile Name
+                    Ivan Ortiz 
                   </p>
                   <p className={CoffeeChatStyle.connectionCardJobTitle}>
-                    job title
+                    Marketing Manager
                   </p>
                 </div>
 
                 {/* Featured Skills */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
+                <div className={CoffeeChatStyle.connectionTag}>Design</div>
+                <div className={CoffeeChatStyle.connectionTag}>Prototyping</div>
+                <div className={CoffeeChatStyle.connectionTag}>Teamwork</div>
+                <div className={CoffeeChatStyle.connectionTag}>Copywriting</div>
                </div>
 
                 {/* Common Interests */}
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Common Interests</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
+                <div className={CoffeeChatStyle.connectionTag}>Theater</div>
+                <div className={CoffeeChatStyle.connectionTag}>Art</div>
+                <div className={CoffeeChatStyle.connectionTag}>Music</div>
+                <div className={CoffeeChatStyle.connectionTag}>Sushi</div>
                </div>
 
                 {/* Upcoming Availability */}
@@ -357,30 +358,30 @@ const calendlyConfig = {
                  {/* Availability 1 */}
                 <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  9
+                  11
                  </div>                
                 </div>
 
                  {/* Availability 2 */}
                  <div className={CoffeeChatStyle.connectionDateMiddleTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAU
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  10
+                  12
                  </div>                
                 </div>
 
                   {/* Availability 3 */}
                   <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  11
+                  13
                  </div>                
                 </div>
 
