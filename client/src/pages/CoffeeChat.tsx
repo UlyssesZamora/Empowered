@@ -222,7 +222,7 @@ const calendlyConfig = {
                 </div>
                 <div>
                   <p className={CoffeeChatStyle.connectionCardName}>
-                    Deborah Katzer
+                    Deborah Miller
                   </p>
                   <p className={CoffeeChatStyle.connectionCardJobTitle}>
                     Chief Financial Officer
@@ -365,7 +365,7 @@ const calendlyConfig = {
                  {/* Availability 2 */}
                  <div className={CoffeeChatStyle.connectionDateMiddleTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  MAU
+                  MAY
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
                   12
