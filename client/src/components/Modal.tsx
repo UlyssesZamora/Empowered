@@ -42,14 +42,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <div className={styles.modalLeftTop}>
         
           <img className={CoffeeChatStyle.connectionCardAvatar}
-                    src="/images/avatar.png"
+                    src="/images/connectionOne.png"
           />
            <div>
             <p className={CoffeeChatStyle.connectionCardNameModal}>
-              Profile Name
+              Nichole Anderson
             </p>
             <p className={CoffeeChatStyle.connectionCardJobTitleModal}>
-                job title
+                Software Engineer
                 </p>
            </div>
         </div>
@@ -57,19 +57,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 {/* Featured Skills */}
 <div className={styles.modalSmallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
-                <div className={CoffeeChatStyle.connectionTag}>skill</div>
+                <div className={CoffeeChatStyle.connectionTag}>Cloud Computing</div>
+                <div className={CoffeeChatStyle.connectionTag}>React</div>
+                <div className={CoffeeChatStyle.connectionTag}>Java</div>
                </div>
 
                 {/* Common Interests */}
                <div className={styles.modalSmallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Common Interests</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
-                <div className={CoffeeChatStyle.connectionTag}>interest</div>
+                <div className={CoffeeChatStyle.connectionTag}>Art</div>
+                <div className={CoffeeChatStyle.connectionTag}>Baking</div>
+                <div className={CoffeeChatStyle.connectionTag}>Fishing</div>
+                <div className={CoffeeChatStyle.connectionTag}>Movies</div>
                </div>
         </div>
 
@@ -94,30 +93,30 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                  {/* Availability 1 */}
                 <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  May
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  9
+                  11
                  </div>                
                 </div>
 
                  {/* Availability 2 */}
                  <div className={CoffeeChatStyle.connectionDateMiddleTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  May
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  10
+                  12
                  </div>                
                 </div>
 
                   {/* Availability 3 */}
                   <div className={CoffeeChatStyle.connectionDateTag}> 
                  <div className={CoffeeChatStyle.connectionAvailabilityMonth}> 
-                  JAN
+                  May
                  </div>
                  <div className={CoffeeChatStyle.connectionAvailabilityDay}> 
-                  11
+                  13
                  </div>                
                 </div>
 
@@ -127,7 +126,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 </div>
 
               <div className ={CoffeeChatStyle.connectionCardDateSelected}>
-              JAN 10
+              May 12
               </div>
 
               <div className ={styles.modalSmallContainer}>
@@ -157,16 +156,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                <button className={CoffeeChatStyle.scheduleMeetingButton}>
                Request a meeting time
                </button>
-                {/* <div>
-                {rootElement && (
-                  <PopupButton
-                    url="https://calendly.com/dreasachz02"
-                    rootElement={rootElement}
-                    text="Click here to schedule!"
-                    className = {CoffeeChatStyle.scheduleMeetingButton}
-                  />
-                )}
-                </div> */}
 
                </div>
                <div className = {CoffeeChatStyle.smallContainerRequestMeetingCalendly}>
