@@ -139,7 +139,6 @@ const calendlyConfig = {
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
                 <div className={CoffeeChatStyle.connectionTag}>Cloud Computing</div>
                 <div className={CoffeeChatStyle.connectionTag}>React</div>
-                <div className={CoffeeChatStyle.connectionTag}>SQL</div>
                 <div className={CoffeeChatStyle.connectionTag}>Java</div>
 
                </div>
@@ -234,8 +233,7 @@ const calendlyConfig = {
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
                 <div className={CoffeeChatStyle.connectionTag}>Finance</div>
-                <div className={CoffeeChatStyle.connectionTag}>Mentoring</div>
-                <div className={CoffeeChatStyle.connectionTag}>Research</div>
+                <div className={CoffeeChatStyle.connectionTag}>Sales</div>
                 <div className={CoffeeChatStyle.connectionTag}>Leadership</div>
                </div>
 
@@ -329,9 +327,8 @@ const calendlyConfig = {
                <div className={CoffeeChatStyle.smallContainer}>
                 <div className = {CoffeeChatStyle.connectionCardCategories}>Featured Skills</div>
                 <div className={CoffeeChatStyle.connectionTag}>Design</div>
-                <div className={CoffeeChatStyle.connectionTag}>Prototyping</div>
+                <div className={CoffeeChatStyle.connectionTag}>SEO</div>
                 <div className={CoffeeChatStyle.connectionTag}>Teamwork</div>
-                <div className={CoffeeChatStyle.connectionTag}>Copywriting</div>
                </div>
 
                 {/* Common Interests */}
