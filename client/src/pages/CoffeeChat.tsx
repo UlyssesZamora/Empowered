@@ -122,7 +122,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="images/connectionOne.png"
                   />
                 </div>
                 <div>
@@ -217,7 +217,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="images/connectionTwo.png"
                   />
                 </div>
                 <div>
@@ -311,7 +311,7 @@ const calendlyConfig = {
                 <div className={CoffeeChatStyle.connectionCardTop}>
                   <img
                     className={CoffeeChatStyle.connectionCardAvatar}
-                    src="images/avatar.png"
+                    src="images/connectionThree.png"
                   />
                 </div>
                 <div>
