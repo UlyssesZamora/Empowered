@@ -129,7 +129,7 @@ const LoginPage = () => {
             <div className={styles.mainBodyContainer}>
               <div className={styles.mainBodyContainerInner}>
                 <div className={styles.textContainer}>
-                  <h1 className={styles.empoweredTitle}>Empowered</h1>
+                  <h1 className={styles.empoweredTitle}>Empowerd</h1>
                   <h3 className={styles.inspoText}>
                     a vetted community for women & allies Empowering opportunity
                   </h3>
